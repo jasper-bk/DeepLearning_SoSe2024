@@ -1,0 +1,401 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass[aspectratio=169]{beamer} %im 16 zu 9 Format
+%\documentclass{beamer} %im 4 zu 3 Format
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}       %gefällt mir vom Stil gut, ist aber nicht klassisch
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}     %klassischer Stil, aber nichts besonderes
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{pdfpcnotes}
+\usepackage{listings}
+\usepackage[ngerman]{babel}
+\usepackage[ngerman]{datetime}
+\usepackage[T1]{fontenc} %Damit Umlaute auch beim Kopieren richtig dargestellt werden
+\usepackage{csquotes}
+
+\usepackage{color}
+
+\usepackage{pgfgantt} %GANT Diagramm
+
+% Farbdefinitionen
+\definecolor{myblue}{RGB}{0, 51, 102}
+\definecolor{myorange}{RGB}{255, 102, 0}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.arrows}
+
+\tikzset{
+    myarrow/.style={
+        draw,
+        fill=orange,
+        single arrow,
+        minimum height=9ex,
+        single arrow head extend=1ex
+    }
+}
+
+\newcommand{\arrowright}{%
+\tikz [baseline=-0.5ex]{\node [myarrow,rotate=0] {};}
+}
+\newcommand{\arrowleft}{%
+\tikz [baseline=-0.5ex]{\node [myarrow,rotate=180] {};}
+}
+
+%extra blocks
+
+\newenvironment<>{extrablock}[1]{%
+\setbeamercolor{block title}{bg=orange!90!black}%
+  \begin{block}#2{#1}}{\end{block}}
+
+\renewcommand{\figurename}{Abbildung}
+
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  escapeinside = {(*@}{@*)},
+  numbers=left,
+  xleftmargin=2.5em,
+  frame=single,
+  breaklines=true,
+}
+
+%Für Zeilenänderungen
+\let\origthelstnumber\thelstnumber
+\makeatletter
+\renewcommand\thelstnumber{%
+    \ifnum\value{lstnumber}>0
+        \origthelstnumber
+    \else
+        \ifnum\value{lstnumber}=-1
+            \ldots
+        \fi
+    \fi
+}
+
+% for starting line numbers
+\newcommand*\startnumber[1]{%
+    \setcounter{lstnumber}{\numexpr#1-1\relax}%
+}
+
+% for stopping line numbers
+\newcommand*\stopnumber{%
+    \startnumber{-2}%
+}
+\makeatother
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Fachpräsentation]{Nutzung von Daten ohne vorgegebene Zielvariable (unlabelled data) durch semiüberwachtes Lernen} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Jasper Bremenkamp} % Your name
+\institute[IU] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+IU Internationale Hochschule \\ % Your institution for the title page
+\medskip
+\textit{jasper.bremenkamp@iu-study.org}\\ % Your email address
+https://jasper.bremenkamp.de
+}
+\date{\today} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+    \titlepage % Print the title page as the first slide
+    
+    \pnote{Herzlich willkommen zu [...] }
+    \pnote{[Thema, Datum und eigenen Namen nennen]}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Agenda} % Table of contents slide, comment this block out to remove it
+    \tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+
+    \pnote{0-5}
+    
+    \pnote{0. Kommen wir direkt zur Agenda der heutigen Präsentation!}
+    \pnote{1. Einleitung in das Thema, semiüberwachtes Lernen auf den ersten Blick, dessen Bedeutung und das inhaltliche Ziel der Präsentation}
+    \pnote{2. Nach der Erstbetrachtung gehen wir auf \dots ein}
+
+    \pnote{3. dann beleuchten wir \dots}
+
+    \pnote{4. Wir schauen, was wir für Szenarien haben, wo wir semiüberwachtes Lernen nutzen können}
+
+    \pnote{5. Zum Abschluss fasse ich das gezeigte zusammen und wir erläutern die Vorteile, aber auch Grenzen von semiüberwachtem Lernen}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+\section{Einleitung}
+    \begin{frame}{Einleitung}
+    \begin{columns}
+        \column{0.6\textwidth}
+        %Begründung der Themenstellung aus dem derzeitigen Stand der Forschung: 
+        %Warum ist das Thema relevant und was sind die offenen Fragen, die in der Präsentation behandelt werden sollen? An dieser Stelle soll auf die ausgewählte Fragestellung zurückgegriffen werden.
+
+        \begin{itemize}
+        \item \dots
+        \end{itemize}
+
+        \vspace*{0.75cm}
+
+        %Ziel der Präsentation: Was soll dargestellt / herausgefunden werden und warum?
+
+        \begin{itemize}
+        \item \dots
+        \end{itemize}        
+        
+        % Abgrenzung des Themas und evtl. themenbezogene Definitionen: Was kann in der Präsentation geleistet werden und was nicht? Welche Reichweite sollen die angestrebten Ergebnisse aufweisen?
+
+        \begin{itemize}
+            \item \dots
+        \end{itemize}      
+
+        % Überblick über Aufbau und Argumentationsfolge: Wie gliedert sich die Präsentation und was erwartet das Publikum im Hauptteil?
+
+        \column{0.4\textwidth}
+
+        
+        % \begin{figure}
+        %     \includegraphics[scale=1]{assets/bild.png}
+        % \end{figure}
+        % \vspace*{-0.5cm}
+        % \scalebox{.4}{Schaubild (eigene Grafik)}
+
+        \pnote{1-7}
+            
+        \pnote{1. \dots}
+        
+    \end{columns}
+    \end{frame}
+
+\section{Gängige Ansätze des semi-überwachten Lernens}
+    \begin{frame}{Gängige Ansätze des semi-überwachten Lernens}
+
+        % Aufgabenstellung 1.:
+        %  Erkläre den Begriff des semi-überwachten Lernens und gib einen Überblick über gängige Ansätze, dieses Lernprinzip umzusetzen.
+
+        \begin{columns}
+
+            \column{0.6\textwidth}
+
+                % \begin{figure}
+                %     \includegraphics[scale=1.5]{assets/schaubild.png}
+                % \end{figure}
+                % \vspace*{-0.5cm}
+                % \scalebox{.6}{Schaubild (Quelle: Wikimedia )}
+
+            \column{0.4\textwidth}        
+
+            \begin{itemize}
+                \item \textbf{\dots:} \dots
+            \end{itemize}
+
+
+        \end{columns}
+        
+        \pnote{1-6}
+        \pnote{1. \dots}
+    \end{frame}
+
+\section{Leistungsmessung bei semi-überwachten Lernverfahren}
+    \begin{frame}{Leistungsmessung bei semi-überwachten Lernverfahren}
+
+         %Aufgabenstellung 2.:
+         % Beschreibe, wie sich die Performanz eines semi-überwachten Lernverfahrens messen lässt.
+
+        \begin{alertblock}{\dots}
+            \begin{itemize}
+                \item \dots
+            \end{itemize}
+        \end{alertblock}
+    
+        \begin{exampleblock}{\dots}
+            \begin{itemize}
+                \item \dots
+            \end{itemize}
+        \end{exampleblock}
+    
+        \begin{extrablock}{\dots}
+            \begin{itemize}
+                \item \dots
+            \end{itemize}
+        \end{extrablock}
+    
+        \pnote{1-4}
+        \pnote{1. ... }
+      
+    \end{frame}
+
+\section{Szenarien für semi-überwachtes Lernen}
+
+    \begin{frame}{Szenarien für semi-überwachtes Lernen}
+
+        %Aufgabenstellung 3.:
+        % Stelle Szenarien dar, in denen dieses semi-überwachte Lernen mit großer Wahrscheinlichkeit erfolgreich eingesetzt werden könnte.
+
+        \begin{columns}
+            \column{0.4\textwidth}
+
+                % \begin{figure}
+                %     \includegraphics[scale=0.17]{assets/symbolbild.jpeg}
+                % \end{figure}
+                % \vspace*{-0.5cm}
+                % \scalebox{.4}{Symbolbild (generiert mit Bing Image Creator)}
+            
+                \column{0.6\textwidth}
+
+            \begin{itemize}
+                \item \textbf{\dots:} 
+                \begin{itemize}
+                    \item \dots
+                \end{itemize}
+                
+                \item \textbf{\dots:} 
+                \begin{itemize}
+                    \item \dots
+                \end{itemize}
+                
+                \item \textbf{\dots:} 
+                \begin{itemize}
+                    \item \dots
+                \end{itemize}
+                
+                \item \textbf{\dots:} 
+                \begin{itemize}
+                    \item \dots
+                \end{itemize}
+            \end{itemize}
+
+        \end{columns}
+
+        \pnote{0-4}
+        \pnote{0. ...}
+
+    \end{frame}
+
+
+\section{Zusammenfassung}
+
+\begin{frame}{Zusammenfassung}
+
+    \begin{itemize}
+        \item \textbf{\dots:}
+        \begin{itemize}
+            \item \dots
+        \end{itemize}
+        
+        \item \textbf{\dots:}
+        \begin{itemize}
+            \item \dots
+        \end{itemize}
+        
+        \item \textbf{\dots:}
+        \begin{itemize}
+            \item \dots
+        \end{itemize}
+    \end{itemize}
+    
+    \pnote{1. ...}
+    \pnote{8. ...}
+
+    \end{frame}
+    
+\section{Referenzen}
+
+\begin{frame}{Referenzen}
+    
+    \footnotesize{
+    \begin{thebibliography}{99}
+
+        \bibitem[IU, 2023]{p1} IU Internationale Hochschule GmbH (2023)
+        \newblock Deep Learning - DLMDWDL01, Studienskript @IU International University of Applied Sciences
+
+        \bibitem[Boyd, 2020]{p1} Umberto Michelucci (2019)
+        \newblock Advanced Applied Deep Learning. Apress. \url{https://doi.org/10.1007/978-1-4842-4976-5}
+
+    \end{thebibliography}
+    }
+
+    \pnote{1-2}
+    \pnote{1. aus Zeitgründen nicht weiter drauf eingehen}
+    \pnote{2. Danke für die Aufmerksamkeit und einen schönen Tag}
+\end{frame}
+
+\end{document} 
