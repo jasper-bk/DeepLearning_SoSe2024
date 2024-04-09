@@ -210,7 +210,8 @@ https://jasper.bremenkamp.de
         %Warum ist das Thema relevant und was sind die offenen Fragen, die in der Präsentation behandelt werden sollen? An dieser Stelle soll auf die ausgewählte Fragestellung zurückgegriffen werden.
 
         \begin{itemize}
-        \item \dots
+        \item Hohe Relevanz angesichts der wachsenden Menge unbeschrifteter Daten. 
+        \item Analyse der Wirksamkeit von verschiedenen semi-überwachter Lernansätze und deren Anwendbarkeit auf reale Datensätze.
         \end{itemize}
 
         \vspace*{0.75cm}
@@ -218,14 +219,11 @@ https://jasper.bremenkamp.de
         %Ziel der Präsentation: Was soll dargestellt / herausgefunden werden und warum?
 
         \begin{itemize}
-        \item \dots
+        \item Scope der Präsentation: Überblick semi-überwachter Lernansätze und Diskussion gängiger Ansätze, Leistung und Szenarien
         \end{itemize}        
         
         % Abgrenzung des Themas und evtl. themenbezogene Definitionen: Was kann in der Präsentation geleistet werden und was nicht? Welche Reichweite sollen die angestrebten Ergebnisse aufweisen?
 
-        \begin{itemize}
-            \item \dots
-        \end{itemize}      
 
         % Überblick über Aufbau und Argumentationsfolge: Wie gliedert sich die Präsentation und was erwartet das Publikum im Hauptteil?
 
@@ -239,6 +237,12 @@ https://jasper.bremenkamp.de
         % \scalebox{.4}{Schaubild (eigene Grafik)}
 
         \pnote{1-7}
+        \pnote{1. Relevanz: Semi-überwachtes Lernen ist ein hochaktuelles Thema in der maschinellen Lernforschung, insbesondere angesichts der wachsenden Menge unbeschrifteter Daten. }
+        \pnote{2. Offene Fragen, die in dieser Präsentation behandelt werden sollen, sind die Wirksamkeit verschiedener semi-überwachter Lernansätze und deren Anwendbarkeit auf reale Datensätze }
+        \pnote{3. Ziel der Präsentation ist es, einen Überblick über semi-überwachtes Lernen zu geben, gängige Ansätze zu diskutieren und die Herausforderungen sowie Möglichkeiten in diesem Bereich zu beleuchten.}
+        \pnote{4. Abgrenzung des Themas: Im Rahmen der Präsentation werden aufgrund des Umfangs nicht alle Aspekte des Themas vollständig behandelt werden. Die angestrebten Ergebnisse sollen ein grundlegendes Verständnis der Konzepte und Ansätze ermöglichen.}
+        \pnote{5. Die Präsentation ist in drei Abschnitte unterteilt. Zunächst wird eine Einführung in das semi-überwachte Lernen gegeben, gefolgt von einer Diskussion über gängige Ansätze. Abschließend werden potenzielle Anwendungsszenarien und Herausforderungen behandelt.}
+
             
         \pnote{1. \dots}
         
@@ -251,9 +255,51 @@ https://jasper.bremenkamp.de
         % Aufgabenstellung 1.:
         %  Erkläre den Begriff des semi-überwachten Lernens und gib einen Überblick über gängige Ansätze, dieses Lernprinzip umzusetzen.
 
+        \begin{alertblock}{Selbstlernende (Self-training) Verfahren}
+            \begin{itemize}
+                \item Verwendung eigener Vorhersagen zum Labeln unbeschrifteter Daten.
+            \end{itemize}
+        \end{alertblock}
+    
+        \begin{exampleblock}{Co-Training}
+            \begin{itemize}
+                \item Training auf mehreren Teilmengen von Features
+            \end{itemize}
+        \end{exampleblock}
+    
+        \begin{extrablock}{Generative Modelle}
+            \begin{itemize}
+                \item Lernen der Datenverteilung, um unbeschriftete Daten zu generieren
+            \end{itemize}
+        \end{extrablock}
+
+        \begin{block}{Graph-basierte Methoden}
+            \begin{itemize}
+                \item Nutzung von Graphenstrukturen, um Informationen aus unbeschrifteten Daten zu extrahieren.
+            \end{itemize}
+        \end{block}
+
+        
+        \pnote{1-6}
+        \pnote{1. Selbstlernende Verfahren sind darauf ausgelegt, dass das Modell seine eigenen Vorhersagen verwendet, um unbeschriftete Daten zu labeln, was zu einer Leistungsverbesserung führen kann.}
+        \pnote{2. Co-Training beinhaltet das Training des Modells auf mehreren Teilmengen von Features und die Verwendung unbeschrifteter Daten aus anderen Teilmengen, um die Leistung des Modells zu verbessern.}
+        \pnote{3. Generative Modelle lernen die Verteilung der Daten, um unbeschriftete Daten zu generieren, die dann zur Verbesserung der Modellleistung verwendet werden können.}
+        \pnote{4. Graph-basierte Methoden extrahieren Informationen aus unbeschrifteten Daten mithilfe von Graphenstrukturen, um die Genauigkeit der Vorhersagen zu erhöhen.}
+
+        % Evtl als Exkurs
+        \pnote{5. Regularisierungstechniken werden verwendet, um unbeschriftete Daten effektiv zu nutzen und gleichzeitig Überanpassung zu vermeiden, indem Regularisierungsterme zum Modell hinzugefügt werden.}
+
+    \end{frame}
+
+\section{Leistungsmessung bei semi-überwachten Lernverfahren}
+    \begin{frame}{Leistungsmessung bei semi-überwachten Lernverfahren}
+
+        %Aufgabenstellung 2.:
+        % Beschreibe, wie sich die Performanz eines semi-überwachten Lernverfahrens messen lässt.
+
         \begin{columns}
 
-            \column{0.6\textwidth}
+            \column{0.4\textwidth}
 
                 % \begin{figure}
                 %     \includegraphics[scale=1.5]{assets/schaubild.png}
@@ -261,46 +307,28 @@ https://jasper.bremenkamp.de
                 % \vspace*{-0.5cm}
                 % \scalebox{.6}{Schaubild (Quelle: Wikimedia )}
 
-            \column{0.4\textwidth}        
+            \column{0.6\textwidth}    
 
             \begin{itemize}
-                \item \textbf{\dots:} \dots
+                \item Messung über gängige Metriken (F1-Score, MSE, etc.) weiterhin möglich
+                \item Vergleich mit überwachten Verfahren ermöglicht Einschätzung der Effizienz und Wirksamkeit.
+                \item Bewertung der Klassifizierungsgenauigkeit von beschrifteten und unbeschrifteten Daten. 
+                \item Nutzung unbeschrifteter Daten zur Verbesserung der Leistung.
+                \item Validierung mit separaten Testdaten zur Beurteilung der Generalisierungsfähigkeit.
+                \item Analyse der Robustheit gegenüber Störungen und Fähigkeit zur Generalisierung.
             \end{itemize}
-
 
         \end{columns}
-        
+
         \pnote{1-6}
-        \pnote{1. \dots}
-    \end{frame}
+        \pnote{1. Auch bei semi-überwachten Lernverfahren kann auf die gängigen Metriken zurückgegriffen werden}
+        \pnote{2. Der direkte Vergleich mit etablierten, überwachten Lernverfahren ermöglicht eine Einschätzung der Effizienz und Wirksamkeit des semi-überwachten Ansatzes.}
+        \pnote{3. Die Bewertung der Klassifizierungsgenauigkeit sowohl von beschrifteten als auch unbeschrifteten Daten ermöglicht eine umfassende Analyse der Leistungsfähigkeit des semi-überwachten Lernverfahrens.}
+        \pnote{4. Die Möglichkeit, unbeschriftete Daten zur Verbesserung der Leistung einzubeziehen, ist eine spezifische Eigenschaft von semi-überwachten Lernverfahren.}
+        \pnote{5. Die Verwendung separater Testdaten ermöglicht eine unabhängige Validierung der Leistung und eine Beurteilung der Generalisierungsfähigkeit des Modells.}
+        \pnote{6. Die Analyse der Robustheit gegenüber Störungen und die Fähigkeit zur Generalisierung auf neue Daten sind wichtige Aspekte der Leistungsmessung bei semi-überwachten Lernverfahren.}
 
-\section{Leistungsmessung bei semi-überwachten Lernverfahren}
-    \begin{frame}{Leistungsmessung bei semi-überwachten Lernverfahren}
 
-         %Aufgabenstellung 2.:
-         % Beschreibe, wie sich die Performanz eines semi-überwachten Lernverfahrens messen lässt.
-
-        \begin{alertblock}{\dots}
-            \begin{itemize}
-                \item \dots
-            \end{itemize}
-        \end{alertblock}
-    
-        \begin{exampleblock}{\dots}
-            \begin{itemize}
-                \item \dots
-            \end{itemize}
-        \end{exampleblock}
-    
-        \begin{extrablock}{\dots}
-            \begin{itemize}
-                \item \dots
-            \end{itemize}
-        \end{extrablock}
-    
-        \pnote{1-4}
-        \pnote{1. ... }
-      
     \end{frame}
 
 \section{Szenarien für semi-überwachtes Lernen}
@@ -311,7 +339,7 @@ https://jasper.bremenkamp.de
         % Stelle Szenarien dar, in denen dieses semi-überwachte Lernen mit großer Wahrscheinlichkeit erfolgreich eingesetzt werden könnte.
 
         \begin{columns}
-            \column{0.4\textwidth}
+            \column{0.3\textwidth}
 
                 % \begin{figure}
                 %     \includegraphics[scale=0.17]{assets/symbolbild.jpeg}
@@ -319,34 +347,39 @@ https://jasper.bremenkamp.de
                 % \vspace*{-0.5cm}
                 % \scalebox{.4}{Symbolbild (generiert mit Bing Image Creator)}
             
-                \column{0.6\textwidth}
+            \column{0.7\textwidth}
 
-            \begin{itemize}
-                \item \textbf{\dots:} 
-                \begin{itemize}
-                    \item \dots
-                \end{itemize}
-                
-                \item \textbf{\dots:} 
-                \begin{itemize}
-                    \item \dots
-                \end{itemize}
-                
-                \item \textbf{\dots:} 
-                \begin{itemize}
-                    \item \dots
-                \end{itemize}
-                
-                \item \textbf{\dots:} 
-                \begin{itemize}
-                    \item \dots
-                \end{itemize}
-            \end{itemize}
+                \begin{enumerate}
+                    \item \textbf{Bilderkennung:}
+                    \begin{itemize}
+                        \item Identifizierung von Objekten in Bildern.
+                        \item Viele unbeschriftete Bilder verfügbar, manuelle Beschriftung kostspielig.
+                    \end{itemize}
+                    \item \textbf{Sprachverarbeitung:}
+                    \begin{itemize}
+                        \item Analyse von gesprochener oder geschriebener Sprache.
+                        \item Umfangreiche Textdaten vorhanden, nur wenige beschriftet.
+                    \end{itemize}
+                    \item \textbf{Medizinische Diagnose:}
+                    \begin{itemize}
+                        \item Erkennung von Krankheiten anhand medizinischer Daten.
+                        \item Viele Daten vorhanden, wenige beschriftet, Diagnose oft subjektiv.
+                    \end{itemize}
+                    \item \textbf{Anomalieerkennung:}
+                    \begin{itemize}
+                        \item Identifizierung von ungewöhnlichen Mustern in Datensätzen.
+                        \item Anomalien schwer zu identifizieren, semi-überwachte Verfahren helfen.
+                    \end{itemize}
+                \end{enumerate}
 
         \end{columns}
 
-        \pnote{0-4}
-        \pnote{0. ...}
+        \pnote{1-4}
+
+        \pnote{1. Semi-überwachtes Lernen ermöglicht effiziente Nutzung unbeschrifteter Bilder durch kostspielige manuelle Beschriftung.}
+        \pnote{2. Semi-überwachte Verfahren verbessern die Leistung bei der Analyse von Textdaten mit geringer beschrifteter Menge.}
+        \pnote{3. Semi-überwachtes Lernen kann die Genauigkeit medizinischer Diagnosen verbessern, trotz subjektiver Natur einiger Diagnosen.}
+        \pnote{4. Semi-überwachtes Lernen hilft, Anomalien in großen Datensätzen zu identifizieren, die schwer manuell zu kennzeichnen sind.}
 
     \end{frame}
 
@@ -356,24 +389,31 @@ https://jasper.bremenkamp.de
 \begin{frame}{Zusammenfassung}
 
     \begin{itemize}
-        \item \textbf{\dots:}
+        \item \textbf{Semi-überwachtes Lernen:}
         \begin{itemize}
-            \item \dots
+            \item Nutzung von unbeschrifteten Daten zur Leistungsverbesserung.
         \end{itemize}
-        
-        \item \textbf{\dots:}
+        \item \textbf{Gängige Ansätze:}
         \begin{itemize}
-            \item \dots
+            \item Selbstlernende Verfahren, Generative Modelle, Transduktives Lernen.
         \end{itemize}
-        
-        \item \textbf{\dots:}
+        \item \textbf{Leistungsmessung:}
         \begin{itemize}
-            \item \dots
+            \item Beurteilung anhand verschiedener Metriken wie Genauigkeit und F1-Score.
+            \item Vergleich mit rein überwachten Verfahren
+        \end{itemize}
+        \item \textbf{Erfolgreiche Einsatzszenarien:}
+        \begin{itemize}
+            \item Bilderkennung, Sprachverarbeitung, medizinische Diagnose und Anomalieerkennung.
         \end{itemize}
     \end{itemize}
     
-    \pnote{1. ...}
-    \pnote{8. ...}
+    \pnote{1-3}
+    \pnote{1. Semi-überwachtes Lernen nutzt unbeschriftete Daten zur Verbesserung der Modellleistung.}
+    \pnote{2. Gängige Ansätze umfassen Selbstlernende Verfahren, Generative Modelle und Transduktives Lernen.}
+    \pnote{3. Die Leistung semi-überwachter Verfahren wird anhand von Metriken wie Genauigkeit und F1-Score bewertet.}
+    \pnote{4. Typische Einsatzszenarien sind Bilderkennung, Sprachverarbeitung, medizinische Diagnose und Anomalieerkennung.}
+
 
     \end{frame}
     
