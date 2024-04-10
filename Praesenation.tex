@@ -210,8 +210,9 @@ https://jasper.bremenkamp.de
         %Warum ist das Thema relevant und was sind die offenen Fragen, die in der Präsentation behandelt werden sollen? An dieser Stelle soll auf die ausgewählte Fragestellung zurückgegriffen werden.
 
         \begin{itemize}
-        \item Hohe Relevanz angesichts der wachsenden Menge unbeschrifteter Daten. 
-        \item Analyse der Wirksamkeit von verschiedenen semi-überwachter Lernansätze und deren Anwendbarkeit auf reale Datensätze.
+        \item Semi-überwachtes Lernen ist Kombination aus überwachtem und unüberwachtem Lernen
+        \item Überwachtes Lernen zum Lenken und unüberwachtes zum Erhöhen der Genauigkeit
+        \item Hohe Relevanz angesichts der wachsenden Menge unbeschrifteter Daten.
         \end{itemize}
 
         \vspace*{0.75cm}
@@ -228,6 +229,8 @@ https://jasper.bremenkamp.de
         % Überblick über Aufbau und Argumentationsfolge: Wie gliedert sich die Präsentation und was erwartet das Publikum im Hauptteil?
 
         \column{0.4\textwidth}
+
+        TBD: Gute Einleitungsgrafik
 
         
         % \begin{figure}
@@ -257,7 +260,7 @@ https://jasper.bremenkamp.de
 
         \begin{alertblock}{Selbstlernende (Self-training) Verfahren}
             \begin{itemize}
-                \item Verwendung eigener Vorhersagen zum Labeln unbeschrifteter Daten.
+                \item Verwendung eigener Vorhersagen zum Labeln unbeschrifteter Daten
             \end{itemize}
         \end{alertblock}
     
@@ -275,11 +278,14 @@ https://jasper.bremenkamp.de
 
         \begin{block}{Graph-basierte Methoden}
             \begin{itemize}
-                \item Nutzung von Graphenstrukturen, um Informationen aus unbeschrifteten Daten zu extrahieren.
+                \item Nutzung von Graphenstrukturen, um Informationen aus unbeschrifteten Daten zu extrahieren
             \end{itemize}
         \end{block}
 
-        
+        % evtl. noch Multi-View Learning, Label-Spreading und transduktives Lernen nennen
+        % ggf. zweite Folie dafür erstellen. 
+        % vermutlich sinnig, um auch auf die Ziel-Zeit zu kommen
+
         \pnote{1-6}
         \pnote{1. Selbstlernende Verfahren sind darauf ausgelegt, dass das Modell seine eigenen Vorhersagen verwendet, um unbeschriftete Daten zu labeln, was zu einer Leistungsverbesserung führen kann.}
         \pnote{2. Co-Training beinhaltet das Training des Modells auf mehreren Teilmengen von Features und die Verwendung unbeschrifteter Daten aus anderen Teilmengen, um die Leistung des Modells zu verbessern.}
@@ -299,24 +305,27 @@ https://jasper.bremenkamp.de
 
         \begin{columns}
 
-            \column{0.4\textwidth}
-
-                % \begin{figure}
-                %     \includegraphics[scale=1.5]{assets/schaubild.png}
-                % \end{figure}
-                % \vspace*{-0.5cm}
-                % \scalebox{.6}{Schaubild (Quelle: Wikimedia )}
-
-            \column{0.6\textwidth}    
+            \column{0.6\textwidth}
 
             \begin{itemize}
                 \item Messung über gängige Metriken (F1-Score, MSE, etc.) weiterhin möglich
-                \item Vergleich mit überwachten Verfahren ermöglicht Einschätzung der Effizienz und Wirksamkeit.
+                \item Anwendung von Kreuzvalidierungstechniken, um eine konsistente Evaluation sicherzustellen
+                \item Vergleich mit überwachten Verfahren ermöglicht Einschätzung der Effizienz und Wirksamkeit
                 \item Bewertung der Klassifizierungsgenauigkeit von beschrifteten und unbeschrifteten Daten. 
-                \item Nutzung unbeschrifteter Daten zur Verbesserung der Leistung.
-                \item Validierung mit separaten Testdaten zur Beurteilung der Generalisierungsfähigkeit.
-                \item Analyse der Robustheit gegenüber Störungen und Fähigkeit zur Generalisierung.
+                \item Validierung mit separaten Testdaten zur Beurteilung der Generalisierungsfähigkeit
+                \item Analyse der Robustheit gegenüber Störungen und Fähigkeit zur Generalisierung
             \end{itemize}
+
+
+            \column{0.4\textwidth}    
+
+            % mehr oder weniger ein Platzhalte
+            % wenn möglich mit etwas besser geeignetem ersetzen
+            \begin{figure}
+                \includegraphics[scale=0.75]{assets/leistung_symbolbild.jpg}
+            \end{figure}
+            \vspace*{-0.5cm}
+            \scalebox{.4}{Symbolbild (generiert mit Copilot Designer)}
 
         \end{columns}
 
@@ -341,36 +350,42 @@ https://jasper.bremenkamp.de
         \begin{columns}
             \column{0.3\textwidth}
 
-                % \begin{figure}
-                %     \includegraphics[scale=0.17]{assets/symbolbild.jpeg}
-                % \end{figure}
-                % \vspace*{-0.5cm}
-                % \scalebox{.4}{Symbolbild (generiert mit Bing Image Creator)}
+
+            % mehr oder weniger ein Platzhalte
+            % wenn möglich mit etwas besser geeignetem ersetzen
+            \begin{figure}
+                \includegraphics[scale=0.25]{assets/szenarien_symbolbild.jpg}
+            \end{figure}
+            \vspace*{-0.5cm}
+            \scalebox{.4}{Symbolbild (generiert mit Copilot Designer)}
             
             \column{0.7\textwidth}
 
                 \begin{enumerate}
                     \item \textbf{Bilderkennung:}
                     \begin{itemize}
-                        \item Identifizierung von Objekten in Bildern.
-                        \item Viele unbeschriftete Bilder verfügbar, manuelle Beschriftung kostspielig.
+                        \item Identifizierung von Objekten in Bildern
+                        \item Viele unbeschriftete Bilder verfügbar, manuelle Beschriftung kostspielig
                     \end{itemize}
                     \item \textbf{Sprachverarbeitung:}
                     \begin{itemize}
-                        \item Analyse von gesprochener oder geschriebener Sprache.
-                        \item Umfangreiche Textdaten vorhanden, nur wenige beschriftet.
+                        \item Analyse von gesprochener oder geschriebener Sprache
+                        \item Umfangreiche Textdaten vorhanden, nur wenige beschriftet
                     \end{itemize}
                     \item \textbf{Medizinische Diagnose:}
                     \begin{itemize}
-                        \item Erkennung von Krankheiten anhand medizinischer Daten.
-                        \item Viele Daten vorhanden, wenige beschriftet, Diagnose oft subjektiv.
+                        \item Erkennung von Krankheiten anhand medizinischer Daten
+                        \item Viele Daten vorhanden, wenige beschriftet, Diagnose oft subjektiv
                     \end{itemize}
                     \item \textbf{Anomalieerkennung:}
                     \begin{itemize}
-                        \item Identifizierung von ungewöhnlichen Mustern in Datensätzen.
-                        \item Anomalien schwer zu identifizieren, semi-überwachte Verfahren helfen.
+                        \item Identifizierung von ungewöhnlichen Mustern in Datensätzen
+                        \item Anomalien schwer zu identifizieren, semi-überwachte Verfahren helfen
                     \end{itemize}
                 \end{enumerate}
+
+                % weitere Beispiele:
+                % Betrugserkennung (gehört aber eher zu Anomalieerkennung)
 
         \end{columns}
 
@@ -384,35 +399,43 @@ https://jasper.bremenkamp.de
     \end{frame}
 
 
-\section{Zusammenfassung}
+\section{Zusammenfassung und Fazit}
 
-\begin{frame}{Zusammenfassung}
+\begin{frame}{Zusammenfassung und Fazit}
 
     \begin{itemize}
         \item \textbf{Semi-überwachtes Lernen:}
         \begin{itemize}
-            \item Nutzung von unbeschrifteten Daten zur Leistungsverbesserung.
+            \item Nutzung von unbeschrifteten Daten zur Leistungsverbesserung
         \end{itemize}
         \item \textbf{Gängige Ansätze:}
         \begin{itemize}
-            \item Selbstlernende Verfahren, Generative Modelle, Transduktives Lernen.
+            \item Selbstlernende Verfahren, Generative Modelle, Graph-basierte Ansätze
         \end{itemize}
         \item \textbf{Leistungsmessung:}
         \begin{itemize}
-            \item Beurteilung anhand verschiedener Metriken wie Genauigkeit und F1-Score.
+            \item Beurteilung anhand verschiedener Metriken wie Genauigkeit und F1-Score
             \item Vergleich mit rein überwachten Verfahren
         \end{itemize}
         \item \textbf{Erfolgreiche Einsatzszenarien:}
         \begin{itemize}
-            \item Bilderkennung, Sprachverarbeitung, medizinische Diagnose und Anomalieerkennung.
+            \item Bilderkennung, Sprachverarbeitung, medizinische Diagnose und Anomalieerkennung
+        \end{itemize}
+
+        % nicht direkt im Scope, aber definitiv erwähnenswert
+        \item \textbf{Herausforderungen:}
+        \begin{itemize}
+            \item Datenqualität, Verfügbarkeit gelabelter Daten, Klassenungleichgewichte, Modellkomplexität
         \end{itemize}
     \end{itemize}
     
-    \pnote{1-3}
+    \pnote{1-5}
     \pnote{1. Semi-überwachtes Lernen nutzt unbeschriftete Daten zur Verbesserung der Modellleistung.}
     \pnote{2. Gängige Ansätze umfassen Selbstlernende Verfahren, Generative Modelle und Transduktives Lernen.}
     \pnote{3. Die Leistung semi-überwachter Verfahren wird anhand von Metriken wie Genauigkeit und F1-Score bewertet.}
     \pnote{4. Typische Einsatzszenarien sind Bilderkennung, Sprachverarbeitung, medizinische Diagnose und Anomalieerkennung.}
+    \pnote{5. Semiüberwachtes Lernen kein Allrounder. Wenn es sich anbietet ist überwachtes Lernen vorzuziehen}
+    \pnote{5. Die Herausforderungen sind beim semiüberwachten Lernen stärker. Die Verfügbarkeit gelabelter Daten ist entscheident. Datenqualität, Klassenungleichgewichte sowie Modellkomplexität spielen eine noch höhere Rolle}
 
 
     \end{frame}
@@ -429,6 +452,9 @@ https://jasper.bremenkamp.de
 
         \bibitem[Boyd, 2020]{p1} Umberto Michelucci (2019)
         \newblock Advanced Applied Deep Learning. Apress. \url{https://doi.org/10.1007/978-1-4842-4976-5}
+
+        \bibitem[Lang, 2022]{p1} Niklas Lang (2023)
+        \newblock Was ist Semi-Supervised Learning? \url{https://databasecamp.de/ki/semi-supervised-learning} (abgerufen am 10.04.2024)
 
     \end{thebibliography}
     }
