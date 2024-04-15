@@ -1,0 +1,58 @@
+[notes]
+### 1
+Herzlich willkommen zu [...] 
+[Thema, Datum und eigenen Namen nennen]
+### 2
+0-5
+0. Kommen wir direkt zur Agenda der heutigen Präsentation!
+1. Einleitung in das Thema, semiüberwachtes Lernen auf den ersten Blick, dessen Bedeutung und das inhaltliche Ziel der Präsentation
+2. Nach der Erstbetrachtung gehen wir auf gängigen Ansätze ein
+3. dann beleuchten wir die Leistungsmessung
+4. Anschlißend schauen wir, was wir für Szenarien haben, wo wir semiüberwachtes Lernen nutzen können
+5. Zum Abschluss fasse ich das gezeigte zusammen und schließen mit einem Fazit ab
+### 3
+1-5
+1. Klären wir zuallerst. Was ist semiüberwachtes Lernen.
+1.1. Der Name sagt bringt es schon ziemlich gut auf den Punkt.
+1.2. Es ist eine Kombination von überwachtem und unüberwachtem Lernen.
+2. Warum macht man das? 
+2.1. Wir verfügen heute über viele Daten. Die allermeisten davon sind aber ohne gesuchte Zielvariable.
+2.2. Ein rein unüberwachter Lernansatz ist verglichen mit überwachtem Lernen stark begrenzt im Funktionsumfang und kann auch nicht dieselben Ziele erfüllen.
+2.3. Damit ist ist semi-überwachtes Lernen ist ein hochrelevantes Thema in der maschinellen Lernforschung, vor allem angesichts der wachsenden Menge unbeschrifteter Daten. 
+3. Ziel der Präsentation ist es, einen Überblick über semi-überwachtes Lernen zu geben, gängige Ansätze sowie die Leistungsmessung zu diskutieren sowie Anwendungsszenarien in diesem Bereich zu beleuchten.
+4. Abgrenzung des Themas: Im Rahmen der Präsentation werden aufgrund des Umfangs nicht alle Aspekte des Themas vollständig behandelt werden.
+4.1. Die angestrebten Ergebnisse sollen ein grundlegendes Verständnis der Konzepte und Ansätze ermöglichen.
+5. Die Präsentation ist in drei Abschnitte unterteilt. Zunächst werden gängige Ansätze des semi-überwachte Lernen vrogestellt, gefolgt von einer Betrachtung der Leistungsmessung. Anschließend werden potenzielle Anwendungsszenarien behandelt. Und ganz zum Schluss wird eben zusammengefasst.
+### 4
+1-6
+1. Selbstlernende Verfahren sind darauf ausgelegt, dass das Modell seine eigenen Vorhersagen verwendet, um unbeschriftete Daten zu labeln, was zu einer Leistungsverbesserung führen kann.
+2. Co-Training beinhaltet das Training des Modells auf mehreren Teilmengen von Features und die Verwendung unbeschrifteter Daten aus anderen Teilmengen, um die Leistung des Modells zu verbessern.
+3. Generative Modelle lernen die Verteilung der Daten, um unbeschriftete Daten zu generieren, die dann zur Verbesserung der Modellleistung verwendet werden können.
+4. Graph-basierte Methoden extrahieren Informationen aus unbeschrifteten Daten mithilfe von Graphenstrukturen, um die Genauigkeit der Vorhersagen zu erhöhen.
+5. Regularisierungstechniken werden verwendet, um unbeschriftete Daten effektiv zu nutzen und gleichzeitig Überanpassung zu vermeiden, indem Regularisierungsterme zum Modell hinzugefügt werden.
+### 5
+1-6
+1. Auch bei semi-überwachten Lernverfahren kann auf die gängigen Metriken zurückgegriffen werden
+2. Der direkte Vergleich mit etablierten, überwachten Lernverfahren ermöglicht eine Einschätzung der Effizienz und Wirksamkeit des semi-überwachten Ansatzes.
+3. Die Bewertung der Klassifizierungsgenauigkeit sowohl von beschrifteten als auch unbeschrifteten Daten ermöglicht eine umfassende Analyse der Leistungsfähigkeit des semi-überwachten Lernverfahrens.
+4. Die Möglichkeit, unbeschriftete Daten zur Verbesserung der Leistung einzubeziehen, ist eine spezifische Eigenschaft von semi-überwachten Lernverfahren.
+5. Die Verwendung separater Testdaten ermöglicht eine unabhängige Validierung der Leistung und eine Beurteilung der Generalisierungsfähigkeit des Modells.
+6. Die Analyse der Robustheit gegenüber Störungen und die Fähigkeit zur Generalisierung auf neue Daten sind wichtige Aspekte der Leistungsmessung bei semi-überwachten Lernverfahren.
+### 6
+1-4
+1. Semi-überwachtes Lernen ermöglicht effiziente Nutzung unbeschrifteter Bilder durch kostspielige manuelle Beschriftung.
+2. Semi-überwachte Verfahren verbessern die Leistung bei der Analyse von Textdaten mit geringer beschrifteter Menge.
+3. Semi-überwachtes Lernen kann die Genauigkeit medizinischer Diagnosen verbessern, trotz subjektiver Natur einiger Diagnosen.
+4. Semi-überwachtes Lernen hilft, Anomalien in großen Datensätzen zu identifizieren, die schwer manuell zu kennzeichnen sind.
+### 7
+1-5
+1. Semi-überwachtes Lernen nutzt unbeschriftete Daten zur Verbesserung der Modellleistung.
+2. Gängige Ansätze umfassen Selbstlernende Verfahren, Generative Modelle und Transduktives Lernen.
+3. Die Leistung semi-überwachter Verfahren wird anhand von Metriken wie Genauigkeit und F1-Score bewertet.
+4. Typische Einsatzszenarien sind Bilderkennung, Sprachverarbeitung, medizinische Diagnose und Anomalieerkennung.
+5. Semiüberwachtes Lernen kein Allrounder. Wenn es sich anbietet ist überwachtes Lernen vorzuziehen
+5. Die Herausforderungen sind beim semiüberwachten Lernen stärker. Die Verfügbarkeit gelabelter Daten ist entscheident. Datenqualität, Klassenungleichgewichte sowie Modellkomplexität spielen eine noch höhere Rolle
+### 8
+1-2
+1. aus Zeitgründen nicht weiter drauf eingehen
+2. Danke für die Aufmerksamkeit und einen schönen Tag
