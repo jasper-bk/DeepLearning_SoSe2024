@@ -262,41 +262,103 @@ https://jasper.bremenkamp.de
         %  Erkläre den Begriff des semi-überwachten Lernens und gib einen Überblick über gängige Ansätze, dieses Lernprinzip umzusetzen.
 
         \begin{alertblock}{Selbstlernende (Self-training) Verfahren}
-            \begin{itemize}
-                \item Verwendung eigener Vorhersagen zum Labeln unbeschrifteter Daten
-            \end{itemize}
+            \begin{minipage}[t]{0.5\textwidth}
+                \begin{itemize}
+                    \item Modell nutzt eigene Vorhersagen
+                    \item Erweitert Trainingsdaten iterativ
+                \end{itemize}
+            \end{minipage}%
+            \begin{minipage}[t]{0.5\textwidth}
+                \begin{itemize}
+                    \item Wiederholtes Training verbessert Modell
+                    \item Kann zu Fehlerakkumulation führen
+                \end{itemize}
+            \end{minipage}
         \end{alertblock}
     
         \begin{exampleblock}{Co-Training}
-            \begin{itemize}
-                \item Training auf mehreren Teilmengen von Features
-            \end{itemize}
+            \begin{minipage}[t]{0.5\textwidth}
+                \begin{itemize}
+                    \item Mehrere Modelle auf verschiedenen Teilmengen
+                    \item Modelle ergänzen sich gegenseitig
+                \end{itemize}
+            \end{minipage}%
+            \begin{minipage}[t]{0.5\textwidth}
+                \begin{itemize}
+                    \item Verbessert Modellleistung durch Zusammenarbeit
+                    \item Effektiv bei großen Datenmengen und Redundanz
+                \end{itemize}
+            \end{minipage}
         \end{exampleblock}
     
         \begin{extrablock}{Generative Modelle}
-            \begin{itemize}
-                \item Lernen der Datenverteilung, um unbeschriftete Daten zu generieren
-            \end{itemize}
+            \begin{minipage}[t]{0.5\textwidth}
+                \begin{itemize}
+                    \item Lernen Verteilung der Daten
+                    \item Generieren neue Daten
+                \end{itemize}
+            \end{minipage}%
+            \begin{minipage}[t]{0.5\textwidth}
+                \begin{itemize}
+                    \item Ergänzen und verstehen fehlende Daten
+                    \item Erzeugt stabile, aber nicht realistische Daten
+                \end{itemize}
+            \end{minipage}
         \end{extrablock}
 
-        \begin{block}{Graph-basierte Methoden}
-            \begin{itemize}
-                \item Nutzung von Graphenstrukturen, um Informationen aus unbeschrifteten Daten zu extrahieren
-            \end{itemize}
-        \end{block}
-
-        % evtl. noch Multi-View Learning, Label-Spreading und transduktives Lernen nennen
-        % ggf. zweite Folie dafür erstellen. 
-        % vermutlich sinnig, um auch auf die Ziel-Zeit zu kommen
 
         \pnote{1-6}
         \pnote{1. Selbstlernende Verfahren sind darauf ausgelegt, dass das Modell seine eigenen Vorhersagen verwendet, um unbeschriftete Daten zu labeln, was zu einer Leistungsverbesserung führen kann.}
         \pnote{2. Co-Training beinhaltet das Training des Modells auf mehreren Teilmengen von Features und die Verwendung unbeschrifteter Daten aus anderen Teilmengen, um die Leistung des Modells zu verbessern.}
         \pnote{3. Generative Modelle lernen die Verteilung der Daten, um unbeschriftete Daten zu generieren, die dann zur Verbesserung der Modellleistung verwendet werden können.}
-        \pnote{4. Graph-basierte Methoden extrahieren Informationen aus unbeschrifteten Daten mithilfe von Graphenstrukturen, um die Genauigkeit der Vorhersagen zu erhöhen.}
+    \end{frame}
 
-        % Evtl als Exkurs
-        \pnote{5. Regularisierungstechniken werden verwendet, um unbeschriftete Daten effektiv zu nutzen und gleichzeitig Überanpassung zu vermeiden, indem Regularisierungsterme zum Modell hinzugefügt werden.}
+    \begin{frame}{Gängige Ansätze des semi-überwachten Lernens (Fortsetzung)}
+
+        \begin{block}{Multi-View Learning}
+            \begin{minipage}[t]{0.5\textwidth}
+                \begin{itemize}
+                    \item Integration verschiedener Datenperspektiven
+                    \item Verbessert Modell durch umfassendere Datenrepräsentation
+                \end{itemize}
+            \end{minipage}%
+            \begin{minipage}[t]{0.5\textwidth}
+                \begin{itemize}
+                    \item Geeignet für heterogene Datenquellen
+                    \item Erfordert Integrationstechniken für Ansichten
+                \end{itemize}
+            \end{minipage}
+        \end{block}
+
+        \begin{extrablock}{Pseudo-Labeling}
+            \begin{minipage}[t]{0.5\textwidth}
+                \begin{itemize}
+                    \item Verbreitet Label auf unlabeled Daten
+                    \item Basierend auf Ähnlichkeit der Datenpunkte
+                \end{itemize}
+            \end{minipage}%
+            \begin{minipage}[t]{0.5\textwidth}
+                \begin{itemize}
+                    \item Iterativer Algorithmus zur Labelverteilung
+                    \item Sensibel gegenüber initialem Labelrauschen
+                \end{itemize}
+            \end{minipage}
+        \end{extrablock}
+
+        \begin{exampleblock}{Transduktives Lernen}
+            \begin{minipage}[t]{0.5\textwidth}
+                \begin{itemize}
+                    \item Lernt Vorhersagen für unlabeled Daten
+                    \item Risiko von Overfitting auf gegebenen Daten
+                \end{itemize}
+            \end{minipage}%
+            \begin{minipage}[t]{0.5\textwidth}
+                \begin{itemize}
+                    \item Nutzt Datenstruktur für Vorhersagen
+                    \item Weniger allgemeingültig als induktives Lernen
+                \end{itemize}
+            \end{minipage}
+        \end{exampleblock}
 
     \end{frame}
 
@@ -450,14 +512,18 @@ https://jasper.bremenkamp.de
     \footnotesize{
     \begin{thebibliography}{99}
 
-        \bibitem[IU, 2023]{p1} IU Internationale Hochschule GmbH (2023)
-        \newblock Deep Learning - DLMDWDL01, Studienskript @IU International University of Applied Sciences
+        \bibitem[Avital, 2019]{p1} Oliver Avital, Augustus Odena, Colin Raffel, Ekin Cubuk, Ian Goodfellow (2019)
+        \newblock  Realistic Evaluation of Deep Semi-Supervised
+        Learning Algorithms. \url{http://arxiv.org/abs/1804.09170} (abgerufen am 16.04.2024)
 
-        \bibitem[Boyd, 2020]{p1} Umberto Michelucci (2019)
-        \newblock Advanced Applied Deep Learning. Apress. \url{https://doi.org/10.1007/978-1-4842-4976-5}
+        \bibitem[Bergmann, 2023]{p1} Dave Bergmann (2023)
+        \newblock What is semi-supervised learning? \url{https://www.ibm.com/topics/semi-supervised-learning} (abgerufen am 10.04.2024)
 
-        \bibitem[Lang, 2022]{p1} Niklas Lang (2023)
-        \newblock Was ist Semi-Supervised Learning? \url{https://databasecamp.de/ki/semi-supervised-learning} (abgerufen am 10.04.2024)
+        \bibitem[Lang, 2006]{p1} Olivier Chapelle, Bernhard Schölkopf, Alexander Zien (2006)
+        \newblock Semi-Supervised Learning. The MIT Press \url{https://www.molgen.mpg.de/3659531/MITPress--SemiSupervised-Learning.pdf} (abgerufen am 16.04.2024)
+
+        \bibitem[Kingma, 2014]{p1} Diederik Kingma, Danilo J. Rezende, Shakir Mohamed, Max Welling (2014)
+        \newblock Semi-Supervised Learning with Deep Generative Models \url{https://arxiv.org/abs/1406.5298} (abgerufen am 16.04.2024)
 
     \end{thebibliography}
     }
@@ -474,5 +540,6 @@ https://jasper.bremenkamp.de
 % Präsentation muss ungefährt Doppelt bis dreifach so lang werden, um 15 min zu erreichen
 % Dafür: Vor allem die Ansätze deutlich besser vorstellen!
 % Grafiken zum Teil durch bessere (idealweise illustrierende) Grafiken ersetzen
-% Mehr Literaturarbeit
+% Literatur noch besser auswerten
+% Verständlichkeit und Erfüllung der Aufgabenstellung doppelt überprüfen
 % Zum Schluss: 1-2 Probeläufe für Zeitmessung und Fehlerbehebung
