@@ -166,7 +166,10 @@
 \institute[IU] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 {
 IU Internationale Hochschule \\ % Your institution for the title page
+Studiengang: M. Sc. Data Science \\
+Modul: Deep Learning \\
 \medskip
+Kontakt: \\
 \textit{jasper.bremenkamp@iu-study.org}\\ % Your email address
 https://jasper.bremenkamp.de
 }
@@ -205,7 +208,7 @@ https://jasper.bremenkamp.de
 \section{Einleitung}
     \begin{frame}{Einleitung}
     \begin{columns}
-        \column{0.6\textwidth}
+        \column{0.4\textwidth}
         %Begründung der Themenstellung aus dem derzeitigen Stand der Forschung: 
         %Warum ist das Thema relevant und was sind die offenen Fragen, die in der Präsentation behandelt werden sollen? An dieser Stelle soll auf die ausgewählte Fragestellung zurückgegriffen werden.
 
@@ -215,12 +218,16 @@ https://jasper.bremenkamp.de
         \item Hohe Relevanz angesichts der wachsenden Menge unbeschrifteter Daten.
         \end{itemize}
 
-        \vspace*{0.75cm}
+        \vspace*{0.4cm}
 
         %Ziel der Präsentation: Was soll dargestellt / herausgefunden werden und warum?
 
         \begin{itemize}
-        \item Scope der Präsentation: Überblick semi-überwachter Lernansätze sowie Diskussion gängiger Ansätze, Leistung und Szenarien
+        \item Scope der Präsentation: 
+            \begin{itemize}
+                \item Überblick semi-überwachter Lernansätze
+                \item Diskussion gängiger Ansätze, Leistung und Szenarien
+            \end{itemize} 
         \end{itemize}        
         
         % Abgrenzung des Themas und evtl. themenbezogene Definitionen: Was kann in der Präsentation geleistet werden und was nicht? Welche Reichweite sollen die angestrebten Ergebnisse aufweisen?
@@ -228,9 +235,18 @@ https://jasper.bremenkamp.de
 
         % Überblick über Aufbau und Argumentationsfolge: Wie gliedert sich die Präsentation und was erwartet das Publikum im Hauptteil?
 
-        \column{0.4\textwidth}
+        \column{0.6\textwidth}
 
-        TBD: Gute Einleitungsgrafik
+        \begin{figure}
+            \includegraphics[scale=0.2]{assets/semi-supervised.jpg}
+        \end{figure}
+        \vspace*{-0.4cm}
+        \scalebox{.5}{
+        \begin{tabular}{@{}l@{}}
+            Einführungsgrafik (Quelle: Gayatri Sharma, \\
+             URL: \url{https://miro.medium.com/v2/resize:fit:720/format:webp/1*snZhMEQFhoJwbM5c0CPOAw.png})
+        \end{tabular}
+        }
 
         
         % \begin{figure}
@@ -239,9 +255,9 @@ https://jasper.bremenkamp.de
         % \vspace*{-0.5cm}
         % \scalebox{.4}{Schaubild (eigene Grafik)}
 
-        \pnote{1-5}
+        \pnote{1-4}
         \pnote{1. Klären wir zuallerst. Was ist semiüberwachtes Lernen.}
-        \pnote{1.1. Der Name ----bringt es schon ziemlich gut auf den Punkt.}
+        \pnote{1.1. Der Name bringt es schon ziemlich gut auf den Punkt.}
         \pnote{1.2. Es ist eine Kombination von überwachtem und unüberwachtem Lernen.}
         \pnote{2. Warum macht man das? }
         \pnote{2.1. Wir verfügen heute über viele Daten. Die allermeisten davon sind aber ohne gesuchte Zielvariable.} 
@@ -249,8 +265,7 @@ https://jasper.bremenkamp.de
         \pnote{2.3. Damit ist ist semi-überwachtes Lernen ist ein hochrelevantes Thema in der maschinellen Lernforschung, vor allem angesichts der wachsenden Menge unbeschrifteter Daten. }
         \pnote{3. Ziel der Präsentation ist es, einen Überblick über semi-überwachtes Lernen zu geben, gängige Ansätze vorzustellen sowie die Leistungsmessung zu diskutieren sowie Anwendungsszenarien in diesem Bereich zu beleuchten.}
         \pnote{4. Abgrenzung des Themas: Im Rahmen der Präsentation werden aufgrund des Umfangs nicht alle Aspekte des Themas vollständig behandelt werden.}
-        \pnote{4.1. Die angestrebten Ergebnisse sollen ein grundlegendes Verständnis der Konzepte und Ansätze ermöglichen.}--
-        \pnote{5. Die Präsentation ist in drei Abschnitte unterteilt. Zunächst werden gängige Ansätze des semi-überwachte Lernen vrogestellt, gefolgt von einer Betrachtung der Leistungsmessung. Anschließend werden potenzielle Anwendungsszenarien behandelt. Und ganz zum Schluss wird eben zusammengefasst.}
+        \pnote{4.1. Angestrebtes Ergebnis soll ein grundlegendes Verständnis der Konzepte und Ansätze sein.}
         
     \end{columns}
     \end{frame}
@@ -300,8 +315,8 @@ https://jasper.bremenkamp.de
             \end{minipage}%
             \begin{minipage}[t]{0.5\textwidth}
                 \begin{itemize}
-                    \item Ergänzen und verstehen fehlende Daten
-                    \item Erzeugt stabile, aber nicht realistische Daten
+                    \item Ergänzen und verstehen fehlender Daten
+                    \item Erzeugt i. d. R. stabile, aber nicht realistische Daten
                 \end{itemize}
             \end{minipage}
         \end{extrablock}
@@ -402,7 +417,6 @@ https://jasper.bremenkamp.de
         \pnote{5. Die Verwendung separater Testdaten ermöglicht eine unabhängige Validierung der Leistung und eine Beurteilung der Generalisierungsfähigkeit des Modells.}
         \pnote{6. Die Analyse der Robustheit gegenüber Störungen und die Fähigkeit zur Generalisierung auf neue Daten sind wichtige Aspekte der Leistungsmessung bei semi-überwachten Lernverfahren.}
 
-
     \end{frame}
 
 \section{Szenarien für semi-überwachtes Lernen}
@@ -414,7 +428,6 @@ https://jasper.bremenkamp.de
 
         \begin{columns}
             \column{0.3\textwidth}
-
 
             % mehr oder weniger ein Platzhalte
             % wenn möglich mit etwas besser geeignetem ersetzen
@@ -475,7 +488,7 @@ https://jasper.bremenkamp.de
         \end{itemize}
         \item \textbf{Gängige Ansätze:}
         \begin{itemize}
-            \item Selbstlernende Verfahren, Generative Modelle, Graph-basierte Ansätze
+            \item Selbstlernende Verfahren, Generative Modelle, Pseudo-Labeling
         \end{itemize}
         \item \textbf{Leistungsmessung:}
         \begin{itemize}
@@ -490,7 +503,7 @@ https://jasper.bremenkamp.de
         % nicht direkt im Scope, aber definitiv erwähnenswert
         \item \textbf{Herausforderungen:}
         \begin{itemize}
-            \item Datenqualität, Verfügbarkeit gelabelter Daten, Klassenungleichgewichte, Modellkomplexität
+            \item Verfügbarkeit gelabelter Daten, Datenqualität, Klassenungleichgewichte, Modellkomplexität
         \end{itemize}
     \end{itemize}
     
@@ -500,7 +513,8 @@ https://jasper.bremenkamp.de
     \pnote{3. Die Leistung semi-überwachter Verfahren wird anhand von Metriken wie Genauigkeit und F1-Score bewertet.}
     \pnote{4. Typische Einsatzszenarien sind Bilderkennung, Sprachverarbeitung, medizinische Diagnose und Anomalieerkennung.}
     \pnote{5. Semiüberwachtes Lernen kein Allrounder. Wenn es sich anbietet ist überwachtes Lernen vorzuziehen}
-    \pnote{5. Die Herausforderungen sind beim semiüberwachten Lernen stärker. Die Verfügbarkeit gelabelter Daten ist entscheident. Datenqualität, Klassenungleichgewichte sowie Modellkomplexität spielen eine noch höhere Rolle}
+    \pnote{5. Die Herausforderungen sind beim semiüberwachten Lernen stärker.}
+    \pnote{5.1. Die Verfügbarkeit gelabelter Daten ist entscheident. Datenqualität, Klassenungleichgewichte sowie Modellkomplexität spielen eine noch höhere Rolle}
 
 
     \end{frame}
@@ -536,10 +550,12 @@ https://jasper.bremenkamp.de
 \end{document} 
 
 % To-Dos:
-% pnotes teilen für bessere Lesbarkeit
-% Präsentation muss ungefährt Doppelt bis dreifach so lang werden, um 15 min zu erreichen
+% pnotes teilen für bessere Lesbarkeit und an Folien Inhalt anpassen
+% Präsentation dauert Stand jetzt 17.04. ca. 10min. Nochmal 5min mehr benötigt
 % Dafür: Vor allem die Ansätze deutlich besser vorstellen!
+
 % Grafiken zum Teil durch bessere (idealweise illustrierende) Grafiken ersetzen
-% Literatur noch besser auswerten
+% Bezug zur Literatur stärker herstellen: Evtl die Ansätze dann durch die Methoden ersetzen.
 % Verständlichkeit und Erfüllung der Aufgabenstellung doppelt überprüfen
 % Zum Schluss: 1-2 Probeläufe für Zeitmessung und Fehlerbehebung
+% Folie über Leistungsmessung teilen oder anderweitig schöner gestalten
