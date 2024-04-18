@@ -171,7 +171,7 @@ Modul: Deep Learning \\
 \medskip
 Kontakt: \\
 \textit{jasper.bremenkamp@iu-study.org}\\ % Your email address
-https://jasper.bremenkamp.de
+\url{https://jasper.bremenkamp.de}
 }
 \date{\today} % Date, can be changed to a custom date
 
@@ -271,109 +271,109 @@ https://jasper.bremenkamp.de
     \end{frame}
 
 \section{Gängige Ansätze des semi-überwachten Lernens}
-    \begin{frame}{Gängige Ansätze des semi-überwachten Lernens}
+    \begin{frame}{Gängige Ansätze des semi-überwachten Lernens (1/3)}
 
         % Aufgabenstellung 1.:
         %  Erkläre den Begriff des semi-überwachten Lernens und gib einen Überblick über gängige Ansätze, dieses Lernprinzip umzusetzen.
 
-        \begin{alertblock}{Selbstlernende (Self-training) Verfahren}
+        \begin{extrablock}{Entropy Minimization (EntMin)}
             \begin{minipage}[t]{0.5\textwidth}
                 \begin{itemize}
-                    \item Modell nutzt eigene Vorhersagen
-                    \item Erweitert Trainingsdaten iterativ
-                \end{itemize}
+                    \item \textbf{Funktionsweise}: Minimiert Unsicherheit der Modellvorhersagen durch Entropieminimierung.
+                    \item \textbf{Abgrenzung}: Fokussiert auf Reduzierung der Modellunsicherheit.
+                    \end{itemize}
             \end{minipage}%
             \begin{minipage}[t]{0.5\textwidth}
                 \begin{itemize}
-                    \item Wiederholtes Training verbessert Modell
-                    \item Kann zu Fehlerakkumulation führen
-                \end{itemize}
-            \end{minipage}
-        \end{alertblock}
-    
-        \begin{exampleblock}{Co-Training}
-            \begin{minipage}[t]{0.5\textwidth}
-                \begin{itemize}
-                    \item Mehrere Modelle auf verschiedenen Teilmengen
-                    \item Modelle ergänzen sich gegenseitig
-                \end{itemize}
-            \end{minipage}%
-            \begin{minipage}[t]{0.5\textwidth}
-                \begin{itemize}
-                    \item Verbessert Modellleistung durch Zusammenarbeit
-                    \item Effektiv bei großen Datenmengen und Redundanz
-                \end{itemize}
-            \end{minipage}
-        \end{exampleblock}
-    
-        \begin{extrablock}{Generative Modelle}
-            \begin{minipage}[t]{0.5\textwidth}
-                \begin{itemize}
-                    \item Lernen Verteilung der Daten
-                    \item Generieren neue Daten
-                \end{itemize}
-            \end{minipage}%
-            \begin{minipage}[t]{0.5\textwidth}
-                \begin{itemize}
-                    \item Ergänzen und verstehen fehlender Daten
-                    \item Erzeugt i. d. R. stabile, aber nicht realistische Daten
+                    \item \textbf{Ziel}: Erhöht die Zuverlässigkeit und Robustheit der Modellvorhersagen.
+                    \item \textbf{Besonderheiten}: Betont die Minimierung der Modellentropie.            
                 \end{itemize}
             \end{minipage}
         \end{extrablock}
 
-
-        \pnote{1-6}
-        \pnote{1. Selbstlernende Verfahren sind darauf ausgelegt, dass das Modell seine eigenen Vorhersagen verwendet, um unbeschriftete Daten zu labeln, was zu einer Leistungsverbesserung führen kann.}
-        \pnote{2. Co-Training beinhaltet das Training des Modells auf mehreren Teilmengen von Features und die Verwendung unbeschrifteter Daten aus anderen Teilmengen, um die Leistung des Modells zu verbessern.}
-        \pnote{3. Generative Modelle lernen die Verteilung der Daten, um unbeschriftete Daten zu generieren, die dann zur Verbesserung der Modellleistung verwendet werden können.}
-    \end{frame}
-
-    \begin{frame}{Gängige Ansätze des semi-überwachten Lernens (Fortsetzung)}
-
-        \begin{block}{Multi-View Learning}
+        \begin{block}{Pseudo-Labeling}
             \begin{minipage}[t]{0.5\textwidth}
                 \begin{itemize}
-                    \item Integration verschiedener Datenperspektiven
-                    \item Verbessert Modell durch umfassendere Datenrepräsentation
+                    \item \textbf{Funktionsweise}: Verwendet Vorhersagen auf unlabeled Daten zur Labelerweiterung.
+                    \item \textbf{Abgrenzung}: Einfache Methode zur semi-überwachten Schulung.
                 \end{itemize}
             \end{minipage}%
             \begin{minipage}[t]{0.5\textwidth}
                 \begin{itemize}
-                    \item Geeignet für heterogene Datenquellen
-                    \item Erfordert Integrationstechniken für Ansichten
+                    \item \textbf{Ziel}: Verbessert die Modellleistung durch zusätzliche Daten.
+                    \item \textbf{Besonderheiten}: Erweitert den Trainingsdatensatz durch Labeling von unlabeled Daten.            
                 \end{itemize}
             \end{minipage}
         \end{block}
 
-        \begin{extrablock}{Pseudo-Labeling}
+
+    \end{frame}
+
+    \begin{frame}{Gängige Ansätze des semi-überwachten Lernens (2/3)}
+
+        \begin{exampleblock}{$\Pi$-Model} 
             \begin{minipage}[t]{0.5\textwidth}
                 \begin{itemize}
-                    \item Verbreitet Label auf unlabeled Daten
-                    \item Basierend auf Ähnlichkeit der Datenpunkte
+                    \item \textbf{Funktionsweise}: Trainiert auf konsistente Vorhersagen für unterschiedliche Transformationen desselben Datensatzes.
+                    \item \textbf{Abgrenzung}: Betont Konsistenz der Modellvorhersagen für mehr Robustheit.                      
                 \end{itemize}
             \end{minipage}%
             \begin{minipage}[t]{0.5\textwidth}
                 \begin{itemize}
-                    \item Iterativer Algorithmus zur Labelverteilung
-                    \item Sensibel gegenüber initialem Labelrauschen
+                    \item \textbf{Ziel}: Verbessert die Modellgeneralisierung durch Konsistenzlernen.
+                    \item \textbf{Besonderheiten}: Berücksichtigt Divergenz zwischen Modellvorhersagen.                    
+                \end{itemize}
+            \end{minipage}
+        \end{exampleblock}
+    
+        \begin{extrablock}{Mean Teacher}
+            \begin{minipage}[t]{0.5\textwidth}
+                \begin{itemize}
+                    \item \textbf{Funktionsweise}: Lehrermodell stabilisiert Aktualisierungen des Schülermodells.
+                    \item \textbf{Abgrenzung}: Nutzt Lehrer-Schüler-Struktur zur Modellverbesserung.                    
+                \end{itemize}
+            \end{minipage}%
+            \begin{minipage}[t]{0.5\textwidth}
+                \begin{itemize}
+                    \item \textbf{Ziel}: Robusteres und stabileres Lernen durch Lehrermodell-Stabilisierung.
+                    \item \textbf{Besonderheiten}: Fokussiert auf Stabilität und Konsistenz des Schülermodells.                    
                 \end{itemize}
             \end{minipage}
         \end{extrablock}
 
-        \begin{exampleblock}{Transduktives Lernen}
+    \end{frame}
+
+    \begin{frame}{Gängige Ansätze des semi-überwachten Lernens (3/3)}
+
+        \begin{exampleblock}{Virtual Adversarial Training (VAT)}
             \begin{minipage}[t]{0.5\textwidth}
                 \begin{itemize}
-                    \item Lernt Vorhersagen für unlabeled Daten
-                    \item Risiko von Overfitting auf gegebenen Daten
+                    \item \textbf{Funktionsweise}: Trainiert auf robuste Vorhersagen gegen virtuelle Störungen im Modellraum.
+                    \item \textbf{Abgrenzung}: Stärkt Robustheit gegenüber adversarialen Angriffen.            
                 \end{itemize}
             \end{minipage}%
             \begin{minipage}[t]{0.5\textwidth}
                 \begin{itemize}
-                    \item Nutzt Datenstruktur für Vorhersagen
-                    \item Weniger allgemeingültig als induktives Lernen
+                    \item \textbf{Ziel}: Verbessert die Modellrobustheit gegenüber Störungen.
+                    \item \textbf{Besonderheiten}: Generiert virtuelle Störungen zur Modellstabilisierung.            
                 \end{itemize}
             \end{minipage}
         \end{exampleblock}
+
+        \begin{alertblock}{Sonstiges}
+            \begin{minipage}[t]{0.5\textwidth}
+                \begin{itemize}
+                    \item Verfügbarkeit vieler weiterer Ansätze aus dem allgemeineren Machine Leaning Bereich
+                \end{itemize}
+            \end{minipage}%
+            \begin{minipage}[t]{0.5\textwidth}
+                \begin{itemize}
+                    \item Bspw. Self-training, Co-Training, Multi View Learning, Transduktives Lernen etc.
+                \end{itemize}
+            \end{minipage}
+        \end{alertblock}
+
+        
 
     \end{frame}
 
@@ -388,10 +388,13 @@ https://jasper.bremenkamp.de
             \column{0.6\textwidth}
 
             \begin{itemize}
-                \item Messung über gängige Metriken (F1-Score, MSE, etc.) weiterhin möglich
+                \item Messung über gängige Metriken
+                \begin{itemize}
+                    \item Genauigkeit, F1-Score, AUR-ROC, Log-Loss etc.
+                \end{itemize}
                 \item Anwendung von Kreuzvalidierungstechniken, um eine konsistente Evaluation sicherzustellen
                 \item Vergleich mit überwachten Verfahren ermöglicht Einschätzung der Effizienz und Wirksamkeit
-                \item Bewertung der Klassifizierungsgenauigkeit von beschrifteten und unbeschrifteten Daten. 
+                \item Bewertung der Klassifizierungsgenauigkeit auf beschrifteten und unbeschrifteten Daten 
                 \item Validierung mit separaten Testdaten zur Beurteilung der Generalisierungsfähigkeit
                 \item Analyse der Robustheit gegenüber Störungen und Fähigkeit zur Generalisierung
             \end{itemize}
@@ -488,7 +491,7 @@ https://jasper.bremenkamp.de
         \end{itemize}
         \item \textbf{Gängige Ansätze:}
         \begin{itemize}
-            \item Selbstlernende Verfahren, Generative Modelle, Pseudo-Labeling
+            \item $\Pi$-Model, VAT, Mean Teacher, EntMin, Pseudo-Labeling etc
         \end{itemize}
         \item \textbf{Leistungsmessung:}
         \begin{itemize}
@@ -550,7 +553,7 @@ https://jasper.bremenkamp.de
 \end{document} 
 
 % To-Dos:
-% pnotes teilen für bessere Lesbarkeit und an Folien Inhalt anpassen
+% pnotes ergänzen und teilen für bessere Lesbarkeit und an Folien Inhalt anpassen
 % Präsentation dauert Stand jetzt 17.04. ca. 10min. Nochmal 5min mehr benötigt
 % Dafür: Vor allem die Ansätze deutlich besser vorstellen!
 
