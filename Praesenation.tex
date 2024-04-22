@@ -364,8 +364,24 @@ Kontakt: \\
             \end{minipage}
         \end{extrablock}
 
+        % Ab hier PNote-Texte fortsetzen
+
         \pnote{1-2}
-        \pnote{tbd}
+        \pnote{1. Als nächstes schauen wir uns das Pi-Model an.}
+        \pnote{1.1. Das Pi-Modell ist darauf ausgerichtet, konsistente Vorhersagen für verschiedene Transformationen desselben Datensatzes zu machen.}
+        \pnote{1.2. Es betont die Konsistenz der Modellvorhersagen für mehr Robustheit und verbessert die Modellgeneralisierung durch Konsistenzlernen.}
+        \pnote{1.3. Besonders hervorzuheben ist, dass es die Divergenz zwischen den Modellvorhersagen berücksichtigt und somit auch die Unsicherheit in den Vorhersagen adressiert.}
+        \pnote{1.4. Durch diesen Ansatz hebt sich das $\Pi$-Modell von anderen Lernalgorithmen ab, indem es nicht nur auf die Qualität der Vorhersagen, sondern auch auf ihre Konsistenz und Stabilität setzt.}
+        \pnote{1.5. Es ermöglicht so ein robusteres und zuverlässigeres Lernen aus unbeschrifteten Daten und trägt dazu bei, Modelle zu erstellen, die auch mit begrenzten Etiketten gut funktionieren.}
+
+        \pnote{2. Ein weiterer Ansatz ist der sog. Mean Techer Ansatz.}
+        \pnote{2.1. Mean Teacher ist ein Lernansatz, bei dem ein Lehrermodell verwendet wird, um ein Schülermodell zu verbessern.}
+        \pnote{2.2. Das Lehrermodell lernt aus den Daten und gibt dann Vorhersagen für unbeschriftete Daten ab,}
+        \pnote{2.3 während das Schülermodell trainiert wird, um diese Vorhersagen zu reproduzieren.}
+        \pnote{2.4. Durch die Verwendung von Konsistenzregularisierung zwischen den Vorhersagen des Lehrer- und Schülermodells wird die Generalisierung verbessert und Overfitting reduziert.}
+        \pnote{2.5. Eine Besonderheit des Mean Teacher Ansatzes ist, dass das Lehrermodell kontinuierlich aktualisiert wird, um den aktuellen Stand des Schülermodells widerzuspiegeln.}
+        \pnote{2.6. Schlussendlich ermöglicht Mean Teacher ein effektives semiüberwachtes Lernen, indem es den Schüler durch die Anpassung an den Lehrer verbessert}
+        \pnote{2.7. und gleichzeitig seine Konsistenz über verschiedene Datentransformationen hinweg fördert.}
 
     \end{frame}
 
@@ -389,7 +405,7 @@ Kontakt: \\
         \begin{alertblock}{Sonstiges}
             \begin{minipage}[t]{0.5\textwidth}
                 \begin{itemize}
-                    \item Verfügbarkeit vieler weiterer Ansätze aus dem allgemeineren Machine Leaning Bereich
+                    \item Verfügbarkeit vieler weiterer Ansätze aus dem semi-überwachten Lernen
                 \end{itemize}
             \end{minipage}%
             \begin{minipage}[t]{0.5\textwidth}
@@ -398,6 +414,17 @@ Kontakt: \\
                 \end{itemize}
             \end{minipage}
         \end{alertblock}
+
+        \pnote{1-2}
+        \pnote{1. Kommen wir zu dem letzten Ansatz, Virtual Adversarial Training - kurz VAT -, den wir uns im Detail anschauen.}
+        \pnote{1.1. Virtual Adversarial Training (VAT) ist ein Lernalgorithmus, der darauf abzielt, Modelle gegen unmerkliche Störungen zu stärken.}
+        \pnote{1.2. Es generiert virtuelle Störungen basierend auf der Unsicherheit des Modells und verwendet diese, um das Modell zu trainieren, widerstandsfähiger gegenüber Angriffen zu machen.}
+        \pnote{1.3. Durch die Maximierung der Unsicherheit in der Richtung der virtuellen Störung lernt das Modell, robustere Entscheidungen zu treffen.}
+        \pnote{1.4. VAT unterscheidet sich von anderen Ansätzen, indem es die Unsicherheit des Modells nutzt, um es zu stärken, anstatt sich nur auf die Maximierung der Klassifikationsgenauigkeit zu konzentrieren.}
+        \pnote{1.5. Durch diesen Ansatz werden die Modelle besser gegen unerwartete oder unbekannte Datenpunkte geschützt und ihre allgemeine Robustheit verbessert.}
+
+        \pnote{2. Es gibt noch viele weitere Ansätze. Im Rahmen der Präsentation wird aber explizit auf die Ansätze aus dem Literaturhinweise eingegangen.}
+        \pnote{2.1. Die anderen Ansätze sind ebenfalls sehr interessant und beschreiben andere Vorgehensweisen, wie man mit nur einer begrenzten Anzahl von Labeln gute Ergebnisse erzielt.} 
 
 
     \end{frame}
@@ -427,7 +454,7 @@ Kontakt: \\
 
             \column{0.4\textwidth}    
 
-            % mehr oder weniger ein Platzhalte
+            % mehr oder weniger ein Platzhalter
             % wenn möglich mit etwas besser geeignetem ersetzen
             \begin{figure}
                 \includegraphics[scale=0.75]{assets/leistung_symbolbild.jpg}
@@ -497,10 +524,21 @@ Kontakt: \\
 
         \pnote{1-4}
 
-        \pnote{1. Semi-überwachtes Lernen ermöglicht effiziente Nutzung unbeschrifteter Bilder, welches kostspielige manuelle Beschriftung vermeidet.}
-        \pnote{2. Semi-überwachte Verfahren verbessern die Leistung bei der Analyse von Textdaten mit geringer beschrifteter Menge.}
-        \pnote{3. Semi-überwachtes Lernen kann die Genauigkeit medizinischer Diagnosen verbessern, trotz subjektiver Natur einiger Diagnosen.}
-        \pnote{4. Semi-überwachtes Lernen hilft, Anomalien in großen Datensätzen zu identifizieren, die schwer manuell zu kennzeichnen sind.}
+        \pnote{1. In der Bilderkennung gibt es eine Vielzahl unbeschrifteter Bilder, die eine breite Palette von Szenarien abdecken.}
+        \pnote{1.1. Diese reichen von alltäglichen Situationen bis hin zu spezifischen Kontexten wie medizinischen Bildern oder Überwachungsaufnahmen.}
+        \pnote{1.2. Semiüberwachtes Lernen erfasst Muster und Merkmale, die für die Identifizierung von Objekten und Mustern relevant sind, ohne dass jedes Bild manuell beschriftet werden muss.}
+
+        \pnote{2. In der Sprachverarbeitung stehen umfangreiche Textdaten zur Verfügung, darunter soziale Medien, Nachrichtenartikel, literarische Werke und vieles mehr.}
+        \pnote{2.1. Diese Daten sind jedoch nur in begrenztem Maße beschriftet, beispielsweise durch Stichproben oder durch automatische Annotationen.}
+        \pnote{2.2. Semiüberwachtes Lernen ermöglicht es, aus dieser Fülle von Textdaten Wissen zu extrahieren und Modelle zu trainieren, die Sprache verstehen und analysieren können.}
+
+        \pnote{3. Bei der medizinischen Diagnose umfassen die verfügbaren Daten verschiedene Arten von medizinischen Tests, Bildern, Patientenakten und Fachliteratur.}
+        \pnote{3.1. Während es eine große Menge an Daten gibt, sind viele davon nicht beschriftet und erfordern spezielle Kenntnisse, um sie zu interpretieren.}
+        \pnote{3.2. Semiüberwachtes Lernen kann helfen, Muster in den Daten zu erkennen, die auf bestimmte Krankheiten oder Zustände hinweisen, und so bei der Diagnoseunterstützung und Behandlungsplanung helfen.}
+
+        \pnote{4. In der Anomalieerkennung gibt es Daten aus verschiedenen Quellen, darunter Sensoren, Logs, Transaktionen und mehr.}
+        \pnote{4.1. Diese Daten enthalten oft Muster von normalem Verhalten, aber auch ungewöhnliche oder anomale Muster, die schwer zu identifizieren sind.}
+        \pnote{4.2. Semiüberwachtes Lernen ermöglicht es, Modelle zu trainieren, die sowohl normales als auch abnormales Verhalten erkennen können, indem sie aus einer Kombination von beschrifteten und unbeschrifteten Daten lernen.}
 
     \end{frame}
 
