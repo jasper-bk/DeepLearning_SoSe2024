@@ -184,7 +184,7 @@ Kontakt: \\
     \pnote{[Thema, Datum und eigenen Namen nennen]}
 
     %Balken um Zoom richtig einzustellen %Soll man ganz sehen und dann passt es
-    \pnote{===========================================================================================================================}
+    \pnote{===========================================================================================================================>}
 \end{frame}
 
 \begin{frame}
@@ -195,11 +195,11 @@ Kontakt: \\
     
     \pnote{0. Kommen wir direkt zur Agenda der heutigen Präsentation!}
     \pnote{1. Einleitung in das Thema, was ist semiüberwachtes Lernen und was ist das inhaltliche Ziel der Präsentation}
-    \pnote{2. Nach der Erstbetrachtung gehen wir auf gängigen Ansätze ein}
+    \pnote{2. Nach der Einleitung gehen wir auf einige gängige Ansätze des semiüberwachtes Lernens ein.}
 
-    \pnote{3. dann beleuchten wir die Leistungsmessung bei SüL}
+    \pnote{3. Anschließend beleuchten wir, wie man eine Leistungsmessung bei SüL vornehmen kann.}
 
-    \pnote{4. Anschliwßend schauen wir, was es für möglich Szenarien gib, bei denen SüL gut genutzt werden kann.}
+    \pnote{4. Danach schauen wir, was es für möglich Anwendungsszenarienszenarien gibt und was Anwendungsszenarien für SüL qualifiziert.}
 
     \pnote{5. Zum Abschluss fasse ich das gezeigte zusammen und schließen mit einem Fazit ab}
 \end{frame}
@@ -216,8 +216,8 @@ Kontakt: \\
         %Warum ist das Thema relevant und was sind die offenen Fragen, die in der Präsentation behandelt werden sollen? An dieser Stelle soll auf die ausgewählte Fragestellung zurückgegriffen werden.
 
         \begin{itemize}
-        \item Semi-überwachtes Lernen ist eine Kombination aus überwachtem und unüberwachtem Lernen
-        \item Überwachtes Lernen zum Lenken und unüberwachtes zum Erhöhen der Genauigkeit
+        \item Semi-überwachtes Lernen ist eine Kombination aus überwachtem und unüberwachtem Lernen.
+        \item Überwachtes Lernen zum Lenken und unüberwachtes zum Erhöhen der Genauigkeit.
         \item Hohe Relevanz angesichts der wachsenden Menge unbeschrifteter Daten.
         \end{itemize}
 
@@ -259,18 +259,21 @@ Kontakt: \\
         % \scalebox{.4}{Schaubild (eigene Grafik)}
 
         \pnote{1-4}
+
         \pnote{1. Klären wir zuallerst. Was ist semiüberwachtes Lernen?}
         \pnote{1.1. Der Name bringt es schon ziemlich gut auf den Punkt.}
         \pnote{1.2. Es ist eine Kombination von überwachtem und unüberwachtem Lernen.}
         \pnote{1.3. Der überwachte Teil lenkt das Modell, der unüberwachte Teil dient zur Verbesserung.}
-        \pnote{2. Warum macht man das? }
-        \pnote{2.1. Wir verfügen heute über viele Daten. Die allermeisten davon sind aber ohne gesuchte Zielvariable.} 
+        \pnote{[Auf Grafik eingehen]}
+        \pnote{2. Warum nutzt man SüL? }
+        \pnote{2.1. Wir verfügen heute über viele Daten. Die allermeisten davon sind aber ohne gesuchte Zielvariable bzw. Label.} 
         \pnote{2.2. Das Hinzufügen der Zielvariable, kann z. B. händisch erfolgen. Ist aber teuer und unpraktisch.} 
-        \pnote{2.3. Jetzt ließe sich sagen. Warum nicht einfach mit einem unüberwachten Verfahren arbeiten?} 
+        \pnote{2.3. Jetzt ließe sich sagen. Warum nicht einfach mit einem unüberwachten Verfahren arbeiten? Da braucht man ja keine Label} 
         \pnote{2.4. Ein rein unüberwachter Lernansatz ist verglichen mit überwachtem Lernen stark begrenzt.}
         \pnote{2.5. Es kann einfach nicht dieselben Aufgaben lösen, da es dann nur auf Ähnlichkeit unter den Features basieren würde.}
-        \pnote{2.6. Damit ist ist semi-überwachtes Lernen ist ein hochrelevantes Thema in der maschinellen Lernforschung.}
-        \pnote{2.7 Insbesondere angesichts der wachsenden Menge unbeschrifteter Daten. }
+        \pnote{2.6. Semi-überwachtes Lernen kann von beiden Welten profitieren und die wenigen Label gut nutzbar machen.}
+        \pnote{2.7. Damit ist es ein hochrelevantes Thema in der maschinellen Lernforschung.}
+        \pnote{2.8. Insbesondere angesichts der wachsenden Menge unbeschrifteter Daten. }
         \pnote{3. Ziel der Präsentation ist es, einen Überblick über semi-überwachtes Lernen zu geben, }
         \pnote{gängige Ansätze vorzustellen sowie die Leistungsmessung und Anwendungsszenarien in diesem Bereich zu beleuchten.}
         \pnote{4. Im Rahmen der Präsentation werden aufgrund des Umfangs nicht alle Aspekte des Themas vollständig behandelt werden.}
@@ -316,10 +319,11 @@ Kontakt: \\
         \end{block}
 
         \pnote{1-2}
+
         \pnote{1. Schauen wir uns als ersten Ansatz die Entropy Minimization bzw. Entropieminimierung an.}
         \pnote{1.1. Bei Entropy Minimization (EntMin) geht es darum, die Unsicherheit unserer Vorhersagen zu minimieren.}
         \pnote{1.2. Wir wollen sicherer sein, dass bestimmte Daten zu einer Klasse gehören.}
-        \pnote{1.3. Wie üblich trainieren wir unser Modell erst mit den gelabelten Daten.}
+        \pnote{1.3. Dafür trainieren wir wie beim SüL üblich unser Modell erst mit den gelabelten Daten.}
         \pnote{1.4. Anschließend versuchen wir die die Unsicherheit bei den Vorhersagen auf den ungelabelten Daten zu minimieren.}
         \pnote{1.5. Dies ist eben über die Entropie möglich, die eben als Maß für Unsicherheit steht.}
         \pnote{1.6. Die Minimierung sorgt damit für eine Glättung der Wahrscheinlichkeitsverteilung.}
@@ -342,7 +346,7 @@ Kontakt: \\
         \begin{exampleblock}{$\Pi$-Model} 
             \begin{minipage}[t]{0.5\textwidth}
                 \begin{itemize}
-                    \item \textbf{Funktionsweise}: Trainiert auf konsistente Vorhersagen für unterschiedliche Transformationen desselben Datensatzes.
+                    \item \textbf{Funktionsweise}: Trainiert auf konsistenten Vorhersagen für unterschiedliche Transformationen desselben Datensatzes.
                     \item \textbf{Abgrenzung}: Betont Konsistenz der Modellvorhersagen für mehr Robustheit.                      
                 \end{itemize}
             \end{minipage}%
@@ -370,12 +374,13 @@ Kontakt: \\
         \end{extrablock}
 
         \pnote{1-2}
+
         \pnote{1. Als nächstes schauen wir uns das Pi-Model an.}
-        \pnote{1.1. Fokus beim Pi-Modell ist konsistente Vorhersagen für verschiedene Transformationen desselben Datensatzes zu machen.}
+        \pnote{1.1. Fokus beim Pi-Modell ist es konsistente Vorhersagen für verschiedene Transformationen desselben Datensatzes zu machen.}
         \pnote{1.2. Die Konsistenz der Modellvorhersagen wird betont, um die Robustheit und Modellgeneralisierung zu verbessern.}
         \pnote{1.3. Hervorzuheben ist, dass auch die Divergenz zwischen den Modellvorhersagen berücksichtigt wird }
         \pnote{und somit auch die Unsicherheit in den Vorhersagen adressiert.}
-        \pnote{1.4. Zusammengefasstd das Pi-Modell hebt sich von anderen Ansätzen ab, indem es nicht nur auf die Qualität der Vorhersagen,}
+        \pnote{1.4. Zusammengefasst, das Pi-Modell hebt sich von anderen Ansätzen ab, indem es nicht nur auf die Qualität der Vorhersagen,}
         \pnote{sondern auch auf ihre Konsistenz und Stabilität setzt.}
 
         \pnote{-------------}
@@ -384,7 +389,7 @@ Kontakt: \\
         \pnote{2.1. Mean Teacher ist ein Lernansatz, bei dem ein Lehrermodell verwendet wird, um ein Schülermodell zu verbessern.}
         \pnote{2.2. Das Lehrermodell lernt aus den beschrifteten Daten und gibt dann Vorhersagen für unbeschriftete Daten ab,}
         \pnote{während das Schülermodell trainiert wird, um diese Vorhersagen zu reproduzieren.}
-        \pnote{2.3. Durch die Verwendung von Konsistenzregularisierung zwischen den Vorhersagen des Lehrer- und Schülermodells wird die }
+        \pnote{2.3. Dies führt zu einer Konsistenzregularisierung zwischen den Vorhersagen des Lehrer- und Schülermodells und damit wird die }
         \pnote{Generalisierung verbessert und Overfitting reduziert.}
         \pnote{2.4. Eine Besonderheit des Mean Teacher Ansatzes ist, dass das Lehrermodell kontinuierlich aktualisiert wird, }
         \pnote{um den aktuellen Stand des Schülermodells widerzuspiegeln.}
@@ -424,6 +429,7 @@ Kontakt: \\
         \end{alertblock}
 
         \pnote{1-2}
+
         \pnote{1. Kommen wir zu dem letzten Ansatz, Virtual Adversarial Training - kurz VAT -, den wir uns im Detail anschauen.}
         \pnote{1.1. Virtual Adversarial Training (VAT) zielt darauf ab, Modelle gegen unmerkliche Störungen zu stärken.}
         \pnote{1.2. Zuallererst wird wie üblich erst auf den gelabelten Daten trainiert.}
@@ -480,20 +486,19 @@ Kontakt: \\
 
         \end{columns}
 
-        \pnote{===========================================================================================================================}
-
-        %To-Do: Ab hier Pnote auf Länge des Balken eingrenzen
-
         \pnote{0-6}
+
         \pnote{0. Zur Leistungsmessung stehen uns viele Möglichkeiten offen. Insgesamt wenig überraschende Methoden.}
         \pnote{1. Bei semi-überwachten Lernverfahren kann auf die gängigen Metriken aus dem überwachten Lernen zurückgegriffen werden.}
-        \pnote{2. Außerdem steht er direkte Vergleich mit etablierten, überwachten Lernverfahren zur Verfügung.}
-        \pnote{2.1. Der Vergleich ermöglich teine Einschätzung der Effizienz und Wirksamkeit des semi-überwachten Ansatzes.}
-        \pnote{3. Auch die Bewertung der Klassifizierungsgenauigkeit auf beschrifteten und unbeschrifteten Daten ermöglicht eine umfassende Analyse der Leistungsfähigkeit des SÜL.}
-        \pnote{4. Zusätzlich lässt sich ebenfalls wie aus anderen Verfahren üblich durch die Verwendung separater Testdaten eine unabhängige Validierung}
-        \pnote{der Leistung und eine Beurteilung der Generalisierungsfähigkeit des Modells durchführen.}
-        \pnote{5. Die Analyse der Robustheit gegenüber Störungen und die Fähigkeit zur Generalisierung auf neue Daten sind wichtige Aspekte der Leistungsmessung bei semi-überwachten Lernverfahren.}
-        \pnote{6. Insgesamt lässt sich anführen, dass die Leistungsmessung sich nicht groß von der überwachten Lernens unterscheidet. }
+        \pnote{2. Außerdem steht der direkte Vergleich mit etablierten, überwachten Lernverfahren zur Verfügung.}
+        \pnote{2.1. Der Vergleich ermöglicht eine Einschätzung der Effizienz und Wirksamkeit des semi-überwachten Ansatzes.}
+        \pnote{3. Auch die Bewertung der Klassifizierungsgenauigkeit}
+        \pnote{auf beschrifteten und unbeschrifteten Daten ermöglicht eine Bewertung der Leistungsfähigkeit des SÜL.}
+        \pnote{4. Zusätzlich lässt sich ebenfalls wie aus anderen Verfahren üblich durch die Verwendung separater Testdaten }
+        \pnote{eine unabhängige Validierung der Leistung und eine Beurteilung der Generalisierungsfähigkeit des Modells durchführen.}
+        \pnote{5. Die Analyse der Robustheit gegenüber Störungen und die Fähigkeit zur Generalisierung auf neue Daten sind eines}
+        \pnote{wichtigesten Aspekte der Leistungsmessung bei SÜL, da es eben nur wenige Daten mit Label gibt, die das Modell lenken.}
+        \pnote{6. Insgesamt lässt sich anführen, dass die Leistungsmessung sich nichtgroß von der überwachten Lernens unterscheidet. }
         \pnote{6.1. Sie ist aber penibler durchzuführen, da die Ausgangssituation eine schwierigere ist. }
 
     \end{frame}
@@ -529,15 +534,15 @@ Kontakt: \\
                         \item Analyse von gesprochener oder geschriebener Sprache
                         \item Umfangreiche Textdaten vorhanden, nur wenige beschriftet
                     \end{itemize}
-                    \item \textbf{Medizinische Diagnose:}
-                    \begin{itemize}
-                        \item Erkennung von Krankheiten anhand medizinischer Daten
-                        \item Viele Daten vorhanden, wenige beschriftet, Diagnose oft subjektiv
-                    \end{itemize}
                     \item \textbf{Anomalieerkennung:}
                     \begin{itemize}
                         \item Identifizierung von ungewöhnlichen Mustern in Datensätzen
                         \item Anomalien schwer zu identifizieren, semi-überwachte Verfahren helfen
+                    \end{itemize}
+                    \item \textbf{Medizinische Diagnose:}
+                    \begin{itemize}
+                        \item Erkennung von Krankheiten anhand medizinischer Daten
+                        \item Viele Daten vorhanden, wenige beschriftet, Diagnose oft subjektiv
                     \end{itemize}
                 \end{enumerate}
 
@@ -547,40 +552,51 @@ Kontakt: \\
         \end{columns}
 
         \pnote{0-5}
-
         \pnote{1. Schauen wir uns nun mögliche Anwendungsszenarien für semiüberwachtes Lernen an.}
 
         \pnote{1. Als erstes betrachten wir die Bilderkennung.}
         \pnote{1.1. In der Bilderkennung gibt es eine Vielzahl unbeschrifteter Bilder, die eine breite Palette von Szenarien abdecken.}
-        \pnote{1.2. Diese reichen von alltäglichen Situationen bis hin zu spezifischen Kontexten wie medizinischen Bildern oder Überwachungsaufnahmen.}
-        \pnote{1.3. SÜL erfasst Muster und Merkmale, die für die Identifizierung von Objekten und Mustern relevant sind, ohne dass jedes Bild manuell beschriftet werden muss.}
+        \pnote{1.2. Sie reichen von alltäglichen Situationen bis hin zu spezifischen Kontexten wie medizinischen Bildern }
+        \pnote{oder Überwachungsaufnahmen.}
+        \pnote{1.3. SÜL erfasst Muster und Merkmale, die für die Identifizierung von Objekten und Mustern relevant sind, }
+        \pnote{ohne dass jedes Bild manuell beschriftet werden muss.}
         \pnote{-------------}
 
 
         \pnote{2. Ein vergleichbares Szenario ist die Sprachverarbeitung.}
-        \pnote{2.1. In der Sprachverarbeitung stehen umfangreiche Textdaten zur Verfügung, darunter soziale Medien, Nachrichtenartikel, literarische Werke und vieles mehr.}
-        \pnote{2.2. Diese Daten sind jedoch nur in begrenztem Maße beschriftet, beispielsweise durch Stichproben oder durch automatische Annotationen.}
-        \pnote{2.3. SÜL ermöglicht es, aus dieser Fülle von Textdaten Wissen zu extrahieren und Modelle zu trainieren, die Sprache verstehen und analysieren können.}
+        \pnote{2.1. In der Sprachverarbeitung stehen umfangreiche Textdaten zur Verfügung, darunter soziale Medien, Nachrichtenartikel, }
+        \pnote{literarische Werke und vieles mehr.}
+        \pnote{2.2. Diese Daten sind jedoch nur in begrenztem Maße beschriftet, beispielsweise durch Stichproben }
+        \pnote{oder durch automatische Annotationen.}
+        \pnote{2.3. SÜL ermöglicht es, auch aus dieser Fülle von Textdaten Wissen zu extrahieren und Modelle zu trainieren, }
+        \pnote{die Sprache verstehen und analysieren können.}
+        \pnote{2.4. Wie auch zuvor bei der Bilderkennung lassen sich bei der Sprachverarbeitung viele weitere Szenarien ableiten.}
         \pnote{-------------}
 
 
-        \pnote{3.. Als nächstes Schauen wir uns die Medizinische Diagnose an.}
-        \pnote{3.1. Bei der medizinischen Diagnose umfassen die verfügbaren Daten verschiedene Arten von medizinischen Tests, Bildern, Patientenakten und Fachliteratur.}
-        \pnote{3.2. Während es eine große Menge an Daten gibt, sind viele davon nicht beschriftet und erfordern spezielle Kenntnisse, um sie zu interpretieren.}
-        \pnote{3.3. SÜL kann helfen, Muster in den Daten zu erkennen, die auf bestimmte Krankheiten oder Zustände hinweisen, und so bei der Diagnoseunterstützung und Behandlungsplanung helfen.}
+        \pnote{3. Als nächstes Schauen wir uns die Anomalieerkennung an.}
+        \pnote{3.1. In der Anomalieerkennung gibt es Daten aus verschiedenen Quellen, darunter Sensoren, Logs, Transaktionen und mehr.}
+        \pnote{3.2. Diese Daten enthalten oft Muster von normalem Verhalten, aber auch ungewöhnliche oder anomale Muster, }
+        \pnote{die schwer zu identifizieren sind.}
+        \pnote{3.3. SÜL ermöglicht es Modelle zu trainieren, die sowohl normales als auch abnormales Verhalten erkennen können }
+        \pnote{und das mit nur wenig beschrifteten Daten.}
+        \pnote{3.4. Im Falle der Anomalieerkennung könnten die wenigen beschrifteten Daten Beispiele von Anomalien wie z. B. Betrügereien}
+        \pnote{enthalten}
         \pnote{-------------}
 
-        \pnote{3.. Zu guterletzt schauen wir uns die Anomalieerkennung an.}
-        \pnote{4.1. In der Anomalieerkennung gibt es Daten aus verschiedenen Quellen, darunter Sensoren, Logs, Transaktionen und mehr.}
-        \pnote{4.2. Diese Daten enthalten oft Muster von normalem Verhalten, aber auch ungewöhnliche oder anomale Muster, die schwer zu identifizieren sind.}
-        \pnote{4.3. SÜL ermöglicht es Modelle zu trainieren, die sowohl normales als auch abnormales Verhalten erkennen können und das mit nur wenig beschrifteten Daten lernen.}
+
+        \pnote{4. Zu guterletzt schauen wir uns die Medizinische Diagnose an.}
+        \pnote{4.1. Bei der medizinischen Diagnose umfassen die verfügbaren Daten verschiedene Arten. }
+        \pnote{Z. B. medizinische Tests, Bildern, Patientenakten und Fachliteratur.}
+        \pnote{4.2. Während es eine große Menge an Daten gibt, sind viele davon nicht beschriftet und erfordern spezielle Kenntnisse, }
+        \pnote{um sie zu interpretieren.}
+        \pnote{4.3. SÜL kann helfen, Muster in den Daten zu erkennen, die auf bestimmte Krankheiten oder Zustände hinweisen, }
+        \pnote{und so bei der Diagnoseunterstützung und Behandlungsplanung helfen.}
         \pnote{-------------}
 
-        \pnote{5. Neben den vorgestellten Anwendungsszenarien gibt es natürlich noch viele mehr.}
-        \pnote{5.1. Diese können z. B. ein Unterszeneraio eines der hier vorgestellten sein. Also basierend auf Sprach- oder Bilderkennung.}
+
+        \pnote{5. Neben den vorgestellten Anwendungsszenarien gibt es natürlich noch viele mehr. Bspw. Unterszenerien. Basierend auf ...}
         \pnote{5.2. Oder generell alle möglichen Szenarien in denen viele Daten gegeben sind, aber nur wenige davon mit Label existieren.}
-
-
 
     \end{frame}
 
@@ -592,7 +608,7 @@ Kontakt: \\
     \begin{itemize}
         \item \textbf{Semi-überwachtes Lernen:}
         \begin{itemize}
-            \item Nutzung von unbeschrifteten Daten zur Leistungsverbesserung
+            \item Nutzung von beschrifteten und unbeschrifteten Daten
         \end{itemize}
         \item \textbf{Gängige Ansätze:}
         \begin{itemize}
@@ -605,7 +621,7 @@ Kontakt: \\
         \end{itemize}
         \item \textbf{Erfolgreiche Einsatzszenarien:}
         \begin{itemize}
-            \item Bilderkennung, Sprachverarbeitung, medizinische Diagnose und Anomalieerkennung
+            \item Bilderkennung, Sprachverarbeitung, Anomalieerkennung und medizinische Diagnose
         \end{itemize}
 
         % nicht direkt im Scope, aber definitiv erwähnenswert
@@ -615,14 +631,17 @@ Kontakt: \\
         \end{itemize}
     \end{itemize}
     
-    \pnote{1-5}
-    \pnote{1. Semi-überwachtes Lernen nutzt unbeschriftete Daten zur Verbesserung der Modellleistung.}
-    \pnote{2. Gängige Ansätze umfassen $\Pi$-Model, VAT, Mean Teacher, EntMin, Pseudo-Labeling etc}
-    \pnote{3. Die Leistung semi-überwachter Verfahren wird anhand von Metriken wie Genauigkeit und F1-Score bewertet.}
-    \pnote{4. Typische Einsatzszenarien sind Bilderkennung, Sprachverarbeitung, medizinische Diagnose und Anomalieerkennung.}
+    \pnote{1-6}
+    \pnote{1. Semi-überwachtes Lernen ist hybrides Lernverfahren.}
+    \pnote{1.2. Es ist nutzt die unbeschriftete Daten zur Verbesserung der Modellleistung.}
+    \pnote{2. Gängige Ansätze umfassen Pi-Model, VAT, Mean Teacher, EntMin, Pseudo-Labeling etc}
+    \pnote{3. Die Leistungmessung bei semi-überwachter Verfahren ist weitestgehend gleich mit üL.}
+    \pnote{4. Typische Einsatzszenarien sind Bilderkennung, Sprachverarbeitung, Anomalieerkennung und medizinische Diagnose.}
     \pnote{5. Semiüberwachtes Lernen kein Allrounder. Wenn es sich anbietet ist überwachtes Lernen vorzuziehen}
-    \pnote{5. Die Herausforderungen sind beim semiüberwachten Lernen stärker.}
-    \pnote{5.1. Die Verfügbarkeit gelabelter Daten ist entscheident. Datenqualität, Klassenungleichgewichte sowie Modellkomplexität spielen eine noch höhere Rolle}
+    \pnote{6. Die Herausforderungen sind beim semiüberwachten Lernen nochmal stärker als beim üL.}
+    \pnote{6.1. Die Verfügbarkeit gelabelter Daten ist entscheident. Ganz ohne Label ist auch SÜL nicht möglich.}
+    \pnote{6.2. Bei nur wenigen Labeln spielt Datenqualität eine noch höhere Rolle. Schlechte Label führen zu schlechten Modellen.}
+    \pnote{6.3. Auch Klassenungleichgewichte bei den Daten und Modellkomplexität haben eine größere Auswirkung.}
 
 
     \end{frame}
@@ -658,11 +677,11 @@ Kontakt: \\
 \end{document} 
 
 % To-Dos:
-% pnotes kürzer schreiben für bessere Lesbarkeit und an Folien Inhalt anpassen
-% Zeilenplatzhalter einbauen zwischen Abschnitten
 % Präsentation dauert Stand jetzt 17.04. ca. 10min. Nochmal 5min mehr benötigt
 % Präsentation dauert Stand jetzt 23.04. ca. 13min. Nochmal 2min mehr benötigt
-    % -> Für Aufgabe 2 oder 3 eine Folie mehr machen
+
+% Präsentation dauert Stand jetzt 24.04. ca. 15min. Passt
+% Evtl Folien noch auseinander ziehen um nicht zu lange bei einer Folie zu reden
 
 % Grafiken zum Teil durch bessere (idealweise illustrierende) Grafiken ersetzen
 % Verständlichkeit und Erfüllung der Aufgabenstellung doppelt überprüfen
