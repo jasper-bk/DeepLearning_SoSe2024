@@ -88,20 +88,26 @@ ihre allgemeine Robustheit verbessert.
 2.2. Die anderen Ansätze sind ebenfalls sehr interessant und beschreiben andere Vorgehensweisen
 wie man mit nur einer begrenzten Anzahl von Labeln gute Ergebnisse erzielt.
 ### 7
-0-6
+0-X
 0. Zur Leistungsmessung stehen uns viele Möglichkeiten offen. Insgesamt wenig überraschende Methoden.
-1. Bei semi-überwachten Lernverfahren kann auf die gängigen Metriken aus dem überwachten Lernen zurückgegriffen werden.
-2. Außerdem steht der direkte Vergleich mit etablierten, überwachten Lernverfahren zur Verfügung.
-2.1. Der Vergleich ermöglicht eine Einschätzung der Effizienz und Wirksamkeit des semi-überwachten Ansatzes.
-3. Auch die Bewertung der Klassifizierungsgenauigkeit
-auf beschrifteten und unbeschrifteten Daten ermöglicht eine Bewertung der Leistungsfähigkeit des SÜL.
-4. Zusätzlich lässt sich ebenfalls wie aus anderen Verfahren üblich durch die Verwendung separater Testdaten 
-eine unabhängige Validierung der Leistung und eine Beurteilung der Generalisierungsfähigkeit des Modells durchführen.
-5. Die Analyse der Robustheit gegenüber Störungen und die Fähigkeit zur Generalisierung auf neue Daten sind eines
-wichtigesten Aspekte der Leistungsmessung bei SÜL, da es eben nur wenige Daten mit Label gibt, die das Modell lenken.
-6. Insgesamt lässt sich anführen, dass die Leistungsmessung sich nichtgroß von der überwachten Lernens unterscheidet. 
-6.1. Sie ist aber penibler durchzuführen, da die Ausgangssituation eine schwierigere ist. 
+1. Bei semi-überwachten Lernverfahren kann auf die gängigen Metriken aus dem überwachten
+und auch dem unüberwachtem Lernen zurückgegriffen werden.
+2. Generell gilt. Metriken sind individuell zu wählen.
+3. Es ist z. B. abhängig davon, ob es sich um Klasssifikation oder Regression handelt.
+4. Welche Ansprüche und Ziele an das Modell gestellt werden, etc.
 ### 8
+1-6
+1. Abseits der Metriken steht auch der direkte Vergleich mit etablierten, überwachten Lernverfahren zur Verfügung.
+1.1. Der Vergleich ermöglicht eine Einschätzung der Effizienz und Wirksamkeit des semi-überwachten Ansatzes.
+2. Auch die separate Bewertung via bereits vorgestellten Metriken
+auf beschrifteten und unbeschrifteten Daten ermöglicht eine Bewertung der Leistungsfähigkeit des SÜL.
+3. Zusätzlich lässt sich ebenfalls wie aus anderen Verfahren üblich durch die Verwendung separater Testdaten 
+eine unabhängige Validierung der Leistung und eine Beurteilung der Generalisierungsfähigkeit des Modells durchführen.
+4. Die Analyse der Robustheit gegenüber Störungen und die Fähigkeit zur Generalisierung auf neue Daten sind eines
+wichtigesten Aspekte der Leistungsmessung bei SÜL, da es eben nur wenige Daten mit Label gibt, die das Modell lenken.
+5. Insgesamt lässt sich anführen, dass die Leistungsmessung sich nichtgroß von der überwachten Lernens unterscheidet. 
+6.1. Sie ist aber penibler durchzuführen, da die Ausgangssituation eine schwierigere ist. 
+### 9
 0-5
 1. Schauen wir uns nun mögliche Anwendungsszenarien für semiüberwachtes Lernen an.
 1. Als erstes betrachten wir die Bilderkennung.
@@ -119,28 +125,28 @@ oder durch automatische Annotationen.
 2.3. SÜL ermöglicht es, auch aus dieser Fülle von Textdaten Wissen zu extrahieren und Modelle zu trainieren, 
 die Sprache verstehen und analysieren können.
 2.4. Wie auch zuvor bei der Bilderkennung lassen sich bei der Sprachverarbeitung viele weitere Szenarien ableiten.
--------------
-3.. Als nächstes Schauen wir uns die Anomalieerkennung an.
-3.1. In der Anomalieerkennung gibt es Daten aus verschiedenen Quellen, darunter Sensoren, Logs, Transaktionen und mehr.
-3.2. Diese Daten enthalten oft Muster von normalem Verhalten, aber auch ungewöhnliche oder anomale Muster, 
+### 10
+1. Als nächstes Schauen wir uns die Anomalieerkennung an.
+1.1. In der Anomalieerkennung gibt es Daten aus verschiedenen Quellen, darunter Sensoren, Logs, Transaktionen und mehr.
+1.2. Diese Daten enthalten oft Muster von normalem Verhalten, aber auch ungewöhnliche oder anomale Muster, 
 die schwer zu identifizieren sind.
-3.3. SÜL ermöglicht es Modelle zu trainieren, die sowohl normales als auch abnormales Verhalten erkennen können 
+1.3. SÜL ermöglicht es Modelle zu trainieren, die sowohl normales als auch abnormales Verhalten erkennen können 
 und das mit nur wenig beschrifteten Daten.
-3.4. Im Falle der Anomalieerkennung könnten die wenigen beschrifteten Daten Beispiele von Anomalien wie z. B. Betrügereien
+1.4. Im Falle der Anomalieerkennung könnten die wenigen beschrifteten Daten Beispiele von Anomalien wie z. B. Betrügereien
 enthalten
 -------------
-4. Zu guterletzt schauen wir uns die Medizinische Diagnose an.
-4.1. Bei der medizinischen Diagnose umfassen die verfügbaren Daten verschiedene Arten. 
+2. Zu guterletzt schauen wir uns die Medizinische Diagnose an.
+2.1. Bei der medizinischen Diagnose umfassen die verfügbaren Daten verschiedene Arten. 
 Z. B. medizinische Tests, Bildern, Patientenakten und Fachliteratur.
-4.2. Während es eine große Menge an Daten gibt, sind viele davon nicht beschriftet und erfordern spezielle Kenntnisse, 
+2.2. Während es eine große Menge an Daten gibt, sind viele davon nicht beschriftet und erfordern spezielle Kenntnisse, 
 um sie zu interpretieren.
-4.3. SÜL kann helfen, Muster in den Daten zu erkennen, die auf bestimmte Krankheiten oder Zustände hinweisen, 
+2.3. SÜL kann helfen, Muster in den Daten zu erkennen, die auf bestimmte Krankheiten oder Zustände hinweisen, 
 und so bei der Diagnoseunterstützung und Behandlungsplanung helfen.
 -------------
-5. Neben den vorgestellten Anwendungsszenarien gibt es natürlich noch viele mehr. Bspw. Unterszenerien. Basierend auf ...
-5.2. Oder generell alle möglichen Szenarien in denen viele Daten gegeben sind, aber nur wenige davon mit Label existieren.
-### 9
-1-5
+3. Neben den vorgestellten Anwendungsszenarien gibt es natürlich noch viele mehr. Bspw. Unterszenerien. Basierend auf ...
+3.1. Oder generell alle möglichen Szenarien in denen viele Daten gegeben sind, aber nur wenige davon mit Label existieren.
+### 11
+1-6
 1. Semi-überwachtes Lernen ist hybrides Lernverfahren.
 1.2. Es ist nutzt die unbeschriftete Daten zur Verbesserung der Modellleistung.
 2. Gängige Ansätze umfassen Pi-Model, VAT, Mean Teacher, EntMin, Pseudo-Labeling etc
@@ -151,7 +157,7 @@ und so bei der Diagnoseunterstützung und Behandlungsplanung helfen.
 6.1. Die Verfügbarkeit gelabelter Daten ist entscheident. Ganz ohne Label ist auch SÜL nicht möglich.
 6.2. Bei nur wenigen Labeln spielt Datenqualität eine noch höhere Rolle. Schlechte Label führen zu schlechten Modellen.
 6.3. Auch Klassenungleichgewichte bei den Daten und Modellkomplexität haben eine größere Auswirkung.
-### 10
+### 12
 1-2
 1. aus Zeitgründen nicht weiter drauf eingehen
 2. Danke für die Aufmerksamkeit und einen schönen Tag
