@@ -216,9 +216,9 @@ Kontakt: \\
         %Warum ist das Thema relevant und was sind die offenen Fragen, die in der Präsentation behandelt werden sollen? An dieser Stelle soll auf die ausgewählte Fragestellung zurückgegriffen werden.
 
         \begin{itemize}
-        \item Semi-überwachtes Lernen ist eine Kombination aus überwachtem und unüberwachtem Lernen.
-        \item Überwachtes Lernen zum Lenken und unüberwachtes zum Erhöhen der Genauigkeit.
-        \item Hohe Relevanz angesichts der wachsenden Menge unbeschrifteter Daten.
+        \item Semi-überwachtes Lernen ist eine Kombination aus überwachtem und unüberwachtem Lernen
+        \item Überwachtes Lernen zum Lenken und unüberwachtes zum Erhöhen der Genauigkeit
+        \item Hohe Relevanz angesichts der wachsenden Menge unbeschrifteter Daten
         \end{itemize}
 
         \vspace*{0.4cm}
@@ -241,13 +241,12 @@ Kontakt: \\
         \column{0.6\textwidth}
 
         \begin{figure}
-            \includegraphics[scale=0.2]{assets/semi-supervised.jpg}
+            \includegraphics[scale=0.19]{assets/semi-supervised.jpg}
         \end{figure}
         \vspace*{-0.4cm}
         \scalebox{.5}{
         \begin{tabular}{@{}l@{}}
-            Einführungsgrafik (Quelle: Gayatri Sharma, \\
-             URL: \url{https://miro.medium.com/v2/resize:fit:720/format:webp/1*snZhMEQFhoJwbM5c0CPOAw.png})
+            Einführungsgrafik (Quelle: eigene Darstellung)
         \end{tabular}
         }
 
@@ -463,7 +462,7 @@ Kontakt: \\
             \column{1\textwidth}
 
             \begin{itemize}
-                \item Leistungsmessung über gängige Metriken des \textbf{überwachtem sowie unüberwachtem Lernen}
+                \item Leistungsmessung über gängige Metriken des überwachtem und zum Teil auch unüberwachtem Lernen
                 \item Metriken sind i. d. R. individuell anzuwenden, aber eine der häufigsten sind z. B. folgende:
                 \begin{itemize}
                     \item \textbf{Genauigkeit (Accuracy)}
@@ -473,17 +472,17 @@ Kontakt: \\
                     \end{itemize} 
                     \item \textbf{F1-Score}
                     \begin{itemize}
-                        \item Harmonisches Mittel aus Precision und Recall
-                        \item Nützlich bei unausgeglichen Klassen und Balance gewünscht ist
+                        \item Harmonisches Mittel aus den Metriken Precision und Recall
+                        \item Nützlich bei unausgeglichen Klassen und falls Balance gewünscht ist
                     \end{itemize} 
                     \item \textbf{Silhouettenkoeffizient}
                     \begin{itemize}
-                        \item Bewerteung von Kompaktheit und Trennschärfe der Cluster bei Clustering-Algorithmen
-                        \item Hilfreich bei semi-überwachtem Clustering.
+                        \item Bewertung von Kompaktheit und Trennschärfe der Cluster bei Clustering-Algorithmen
+                        \item Hilfreich bei semi-überwachtem Clustering
                     \end{itemize} 
                     \item \textbf{Informationsgewinn (Information Gain)}
                     \begin{itemize}
-                        \item Maß für gute Vohersage bei bestimmte Funktion
+                        \item Maß für Vorhersageeignung bei bestimmten Funktion
                         \item Nützlich für Feature-Selektion in semi-überwachten Lernverfahren
                     \end{itemize} 
                 \end{itemize}
@@ -623,7 +622,7 @@ Kontakt: \\
                     \begin{itemize}
                         \item Erkennung von Krankheiten anhand medizinischer Daten
                         \item Viele Daten vorhanden, wenige beschriftet, Diagnose oft subjektiv
-                        \item Möglichkeit zur Integration von Expertenwissen durch semi-überwachtes Lernen
+                        \item Möglichkeit zur Integration von Expertenwissen durch Beisteuern von Labeln
                     \end{itemize}
                 \end{enumerate}
 
@@ -657,8 +656,8 @@ Kontakt: \\
         \pnote{2. Zu guterletzt schauen wir uns die Medizinische Diagnose an.}
         \pnote{2.1. Bei der medizinischen Diagnose umfassen die verfügbaren Daten verschiedene Arten. }
         \pnote{Z. B. medizinische Tests, Bildern, Patientenakten und Fachliteratur.}
-        \pnote{2.2. Während es eine große Menge an Daten gibt, sind viele davon nicht beschriftet und erfordern spezielle Kenntnisse, }
-        \pnote{um sie zu interpretieren.}
+        \pnote{2.2. Es gibt eine große Menge an Daten gibt, viele davon sind nicht beschriftet und erfordern spezielle Kenntnisse, }
+        \pnote{um sie zu interpretieren. Expertenwissen kann hinzugenommen werden, um wenige Label als Fundamtent zu definieren.}
         \pnote{2.3. SÜL kann helfen, Muster in den Daten zu erkennen, die auf bestimmte Krankheiten oder Zustände hinweisen, }
         \pnote{und so bei der Diagnoseunterstützung und Behandlungsplanung helfen.}
         \pnote{-------------}
@@ -682,7 +681,7 @@ Kontakt: \\
         \item \textbf{Gängige Ansätze:}
         \begin{itemize}
             \item $\Pi$-Model, VAT, Mean Teacher, EntMin, Pseudo-Labeling etc
-            \item Verschiedene Fokusse: Konsistenz, Minimierung der Modellentropie, \dots
+            \item Verschiedene Fokusse: Konsistenz, Minimierung der Modellentropie etc
         \end{itemize}
         \item \textbf{Leistungsmessung:}
         \begin{itemize}
@@ -752,7 +751,9 @@ Kontakt: \\
 % Präsentation dauert Stand jetzt 23.04. ca. 13min. Nochmal 2min mehr benötigt
 
 % Präsentation dauert Stand jetzt 24.04. ca. 15min. Passt
-% Evtl Folien noch auseinander ziehen um nicht zu lange bei einer Folie zu reden
+
+% Folien auseinander gezogen
+% Präsentation dauert Stand jetzt 29.04. ca. 16min. Passt
 
 % Grafiken zum Teil durch bessere (idealweise illustrierende) Grafiken ersetzen
 % Verständlichkeit und Erfüllung der Aufgabenstellung doppelt überprüfen

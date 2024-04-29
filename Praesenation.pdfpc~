@@ -94,7 +94,8 @@ wie man mit nur einer begrenzten Anzahl von Labeln gute Ergebnisse erzielt.
 und auch dem unüberwachtem Lernen zurückgegriffen werden.
 2. Generell gilt. Metriken sind individuell zu wählen.
 3. Es ist z. B. abhängig davon, ob es sich um Klasssifikation oder Regression handelt.
-4. Welche Ansprüche und Ziele an das Modell gestellt werden, etc.
+4. Und welche Ansprüche und Ziele an das Modell gestellt werden, etc.
+to be continued
 ### 8
 1-6
 1. Abseits der Metriken steht auch der direkte Vergleich mit etablierten, überwachten Lernverfahren zur Verfügung.
