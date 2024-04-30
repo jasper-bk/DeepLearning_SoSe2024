@@ -88,14 +88,17 @@ ihre allgemeine Robustheit verbessert.
 2.2. Die anderen Ansätze sind ebenfalls sehr interessant und beschreiben andere Vorgehensweisen
 wie man mit nur einer begrenzten Anzahl von Labeln gute Ergebnisse erzielt.
 ### 7
-0-X
+0-8
 0. Zur Leistungsmessung stehen uns viele Möglichkeiten offen. Insgesamt wenig überraschende Methoden.
 1. Bei semi-überwachten Lernverfahren kann auf die gängigen Metriken aus dem überwachten
 und auch dem unüberwachtem Lernen zurückgegriffen werden.
 2. Generell gilt. Metriken sind individuell zu wählen.
-3. Es ist z. B. abhängig davon, ob es sich um Klasssifikation oder Regression handelt.
+3. Einmal ist es z. B. abhängig davon, ob es sich um Klasssifikation oder Regression handelt.
 4. Und welche Ansprüche und Ziele an das Modell gestellt werden, etc.
-to be continued
+5. Aber beim semiüberwachten Lernen hat man dann eben noch eine größere Auswahl.
+6. Wir haben rechts eine kleine Auswahl häufig angewendeter Metriken.
+7. Abhängig von der Anwendung sind diese eben auszuwählen
+8. Aufgrund der Zeit belassen wir es bei dieser Übersicht und gehen nicht mehr einzelnd darauf ein.
 ### 8
 1-6
 1. Abseits der Metriken steht auch der direkte Vergleich mit etablierten, überwachten Lernverfahren zur Verfügung.
@@ -109,7 +112,7 @@ wichtigesten Aspekte der Leistungsmessung bei SÜL, da es eben nur wenige Daten 
 5. Insgesamt lässt sich anführen, dass die Leistungsmessung sich nichtgroß von der überwachten Lernens unterscheidet. 
 6.1. Sie ist aber penibler durchzuführen, da die Ausgangssituation eine schwierigere ist. 
 ### 9
-0-5
+1-2
 1. Schauen wir uns nun mögliche Anwendungsszenarien für semiüberwachtes Lernen an.
 1. Als erstes betrachten wir die Bilderkennung.
 1.1. In der Bilderkennung gibt es eine Vielzahl unbeschrifteter Bilder, die eine breite Palette von Szenarien abdecken.
@@ -127,6 +130,7 @@ oder durch automatische Annotationen.
 die Sprache verstehen und analysieren können.
 2.4. Wie auch zuvor bei der Bilderkennung lassen sich bei der Sprachverarbeitung viele weitere Szenarien ableiten.
 ### 10
+1-3
 1. Als nächstes Schauen wir uns die Anomalieerkennung an.
 1.1. In der Anomalieerkennung gibt es Daten aus verschiedenen Quellen, darunter Sensoren, Logs, Transaktionen und mehr.
 1.2. Diese Daten enthalten oft Muster von normalem Verhalten, aber auch ungewöhnliche oder anomale Muster, 
@@ -139,8 +143,8 @@ enthalten
 2. Zu guterletzt schauen wir uns die Medizinische Diagnose an.
 2.1. Bei der medizinischen Diagnose umfassen die verfügbaren Daten verschiedene Arten. 
 Z. B. medizinische Tests, Bildern, Patientenakten und Fachliteratur.
-2.2. Während es eine große Menge an Daten gibt, sind viele davon nicht beschriftet und erfordern spezielle Kenntnisse, 
-um sie zu interpretieren.
+2.2. Es gibt eine große Menge an Daten gibt, viele davon sind nicht beschriftet und erfordern spezielle Kenntnisse, 
+um sie zu interpretieren. Expertenwissen kann hinzugenommen werden, um wenige Label als Fundamtent zu definieren.
 2.3. SÜL kann helfen, Muster in den Daten zu erkennen, die auf bestimmte Krankheiten oder Zustände hinweisen, 
 und so bei der Diagnoseunterstützung und Behandlungsplanung helfen.
 -------------
@@ -150,10 +154,13 @@ und so bei der Diagnoseunterstützung und Behandlungsplanung helfen.
 1-6
 1. Semi-überwachtes Lernen ist hybrides Lernverfahren.
 1.2. Es ist nutzt die unbeschriftete Daten zur Verbesserung der Modellleistung.
-2. Gängige Ansätze umfassen Pi-Model, VAT, Mean Teacher, EntMin, Pseudo-Labeling etc
-3. Die Leistungmessung bei semi-überwachter Verfahren ist weitestgehend gleich mit üL.
-4. Typische Einsatzszenarien sind Bilderkennung, Sprachverarbeitung, Anomalieerkennung und medizinische Diagnose.
-5. Semiüberwachtes Lernen kein Allrounder. Wenn es sich anbietet ist überwachtes Lernen vorzuziehen
+2. Gängige Ansätze umfassen Pi-Model, VAT, Mean Teacher, EntMin, Pseudo-Labeling und viele mehr
+2.1. All diese Ansätze habe unterschiedliche Fokusse. Einige auch dieselben, aber in unterschiedlichem Ausmaß.
+3. Außerdem hatten wir uns die ie Leistungmessung bei angeschaut und festgestellt, dass 
+semi-überwachter Verfahren auch hier die Methoden aus beiden Welten nutzen können. Auch wenn es doch überwigend üL ist.
+4. Dann haben wir uns noch typische Einsatzszenarien wie Bilderkennung, Sprachverarbeitung, Anomalieerkennung und 
+medizinische Diagnose angeschaut, die sehr vielfältig sind und viele Unterszenerien erlauben.
+----
 6. Die Herausforderungen sind beim semiüberwachten Lernen nochmal stärker als beim üL.
 6.1. Die Verfügbarkeit gelabelter Daten ist entscheident. Ganz ohne Label ist auch SÜL nicht möglich.
 6.2. Bei nur wenigen Labeln spielt Datenqualität eine noch höhere Rolle. Schlechte Label führen zu schlechten Modellen.
