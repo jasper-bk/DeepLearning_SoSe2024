@@ -85,6 +85,9 @@
 \usepackage[ngerman]{datetime}
 \usepackage[T1]{fontenc} %Damit Umlaute auch beim Kopieren richtig dargestellt werden
 \usepackage{csquotes}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\definecolor{LightBlue}{RGB}{140,186,252}
 
 \usepackage{color}
 
@@ -459,46 +462,49 @@ Kontakt: \\
 
         \begin{columns}
 
-            \column{1\textwidth}
+            \column{0.3\textwidth}
 
             \begin{itemize}
-                \item Leistungsmessung über gängige Metriken des überwachtem und zum Teil auch unüberwachtem Lernen
-                \item Metriken sind i. d. R. individuell anzuwenden, aber eine der häufigsten sind z. B. folgende:
-                \begin{itemize}
-                    \item \textbf{Genauigkeit (Accuracy)}
-                    \begin{itemize}
-                        \item Anteil der korrekt klassifizierten Instanzen
-                        \item Gut geeignet, wenn die Klassen im Datensatz ausgeglichen sind
-                    \end{itemize} 
-                    \item \textbf{F1-Score}
-                    \begin{itemize}
-                        \item Harmonisches Mittel aus den Metriken Precision und Recall
-                        \item Nützlich bei unausgeglichen Klassen und falls Balance gewünscht ist
-                    \end{itemize} 
-                    \item \textbf{Silhouettenkoeffizient}
-                    \begin{itemize}
-                        \item Bewertung von Kompaktheit und Trennschärfe der Cluster bei Clustering-Algorithmen
-                        \item Hilfreich bei semi-überwachtem Clustering
-                    \end{itemize} 
-                    \item \textbf{Informationsgewinn (Information Gain)}
-                    \begin{itemize}
-                        \item Maß für Vorhersageeignung bei bestimmten Funktion
-                        \item Nützlich für Feature-Selektion in semi-überwachten Lernverfahren
-                    \end{itemize} 
-                \end{itemize}
+                \item Leistungsmessung über gängige Metriken des \textbf{überwachtem} und zum Teil auch \textbf{unüberwachtem} Lernen
+                \item Metriken sind i. d. R. individuell anzuwenden, aber einige werden besonders häufig angewendet
             \end{itemize}
+
+            \column{0.7\textwidth}
+
+            \begin{table}[htbp]
+                \centering
+                \scalebox{.7}{
+                \begin{tabularx}{1.3\textwidth}{|c|X|c|}
+                    \toprule
+                    \rowcolor{LightBlue}
+                    \textbf{Metrik} & \textbf{Beschreibung} & \textbf{Anwendung} \\ \midrule
+                    Genauigkeit (Accuracy) & Anteil korrekter Vorhersagen & Klassifizierung \\ \hline
+                    F1-Score & Harmonisches Mittel von Precision und Recall & Klassifizierung \\ \hline
+                    Mean Squared Error (MSE) & Quadratischer Fehler zwischen Vorhersage und tatsächlichem Wert & Regression \\ \hline
+                    Kappa-Statistik & Berücksichtigt Zufälligkeit der Vorhersagen & Klassifizierung \\ \hline
+                    Silhouettenkoeffizient & Bewertet Cluster-Kompaktheit und Trennschärfe & Clustering \\ \hline
+                    Informationsgewinn & Misst Vorhersagequalität von Features & Feature-Selektion \\ \hline
+                    Log-Loss & Maß für Unsicherheit von Klassifikationsmodellen & Klassifizierung \\ \hline 
+                    Adjusted Rand Index & Bewertet Ähnlichkeit zwischen Clustering-Ergebnissen & Clustering \\ \hline 
+                \end{tabularx}
+                }
+                \caption{Übersicht häufig anzuwendender Metriken}
+              \end{table}
 
         \end{columns}
 
-        \pnote{0-X}
+        \pnote{0-8}
 
         \pnote{0. Zur Leistungsmessung stehen uns viele Möglichkeiten offen. Insgesamt wenig überraschende Methoden.}
         \pnote{1. Bei semi-überwachten Lernverfahren kann auf die gängigen Metriken aus dem überwachten}
         \pnote{und auch dem unüberwachtem Lernen zurückgegriffen werden.}
         \pnote{2. Generell gilt. Metriken sind individuell zu wählen.}
-        \pnote{3. Es ist z. B. abhängig davon, ob es sich um Klasssifikation oder Regression handelt.}
+        \pnote{3. Einmal ist es z. B. abhängig davon, ob es sich um Klasssifikation oder Regression handelt.}
         \pnote{4. Und welche Ansprüche und Ziele an das Modell gestellt werden, etc.}
-        \pnote{to be continued}
+        \pnote{5. Aber beim semiüberwachten Lernen hat man dann eben noch eine größere Auswahl.}
+        \pnote{6. Wir haben rechts eine kleine Auswahl häufig angewendeter Metriken.}
+        \pnote{7. Abhängig von der Anwendung sind diese eben auszuwählen}
+        \pnote{8. Aufgrund der Zeit belassen wir es bei dieser Übersicht und gehen nicht mehr einzelnd darauf ein.}
 
     \end{frame}
 
@@ -581,7 +587,8 @@ Kontakt: \\
 
         \end{columns}
 
-        \pnote{0-5}
+        \pnote{1-2}
+
         \pnote{1. Schauen wir uns nun mögliche Anwendungsszenarien für semiüberwachtes Lernen an.}
 
         \pnote{1. Als erstes betrachten wir die Bilderkennung.}
@@ -641,6 +648,7 @@ Kontakt: \\
 
         \end{columns}
 
+        \pnote{1-3}
 
         \pnote{1. Als nächstes Schauen wir uns die Anomalieerkennung an.}
         \pnote{1.1. In der Anomalieerkennung gibt es Daten aus verschiedenen Quellen, darunter Sensoren, Logs, Transaktionen und mehr.}
